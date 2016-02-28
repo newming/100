@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Font-Awesome 字体图标的使用</title>
+	<link rel="stylesheet" href="../29/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+		}
+		.main a{
+			text-decoration: none;
+			color:#808080;
+			overflow: scroll;
+		}
+		.main p{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.main .but i{
+			margin: 10px;
+			font-size: 2rem;
+		}
+		.main i{
+			color:#000;
+		}
+		.main pre{
+			padding:10px;
+			border:1px solid #000;
+			background-color: #222;
+			font-size: 1rem;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>Font-Awesome 字体图标的使用</h1>
+		<h3>日期：2015.12.24</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h2>官方网站：<a href="http://www.bootcss.com/p/font-awesome/">点击此处链接</a></h2>
+		<p>以下内容为本人根据老师的讲诉亲自总结，不保证正确。</p>
+		<p>字体图标的来历：因为图片在调整方面的局限性，比如颜色、清晰度等等，没有字体的可调节性强。同时在网站中常用的图片格式大多数是jpg、png格式，这些格式的图片都是位图素材，应用于一些按钮图标之类图片时总会出现毛边，所以字体图标应运而生。</p>
+		<p>制作流程：字体图标首先是由字体制作来的，大概的流程是这样。先通过矢量制图工具（AI等）将图标制作出来，然后在将其做成一种字体（此处注意，为满足网页需要，需做多种格式字体，包括ttf、svg、eot、otf、woff），这个过程很麻烦。下面是将字体包以及css做好。接下来就是应用了，此处所说的应用是最简单的应用。那就是直接连接css样式，在网页浏览的过程中下载对应的字体包，会影响加载速度。</p>
+		<p>老师说他不用这个，替代方式svg，canvas等。</p>
+		<p>下面是几个小案例，应用时只需要连接对应的css样式地址，需要哪个图标就起名对应的class名。</p>
+		<div class="but"><i class="icon-search"></i><i class="icon-camera-retro"></i><i class="icon-repeat"></i><i class="icon-reorder"></i><i class="icon-cloud-download"></i><i class="icon-desktop"></i></div><!-- 字体图标，可以单独设置样式，同字体一样 -->
+		<p>这里先列举这几个，上面的几个也应用到字体的一些css。</p>
+		<p>下面来谈谈一些特殊的用法。</p>
+		<p><i class="icon-camera-retro icon-large"></i> icon-camera-retro</p>
+		<p><i class="icon-camera-retro icon-2x"></i> icon-camera-retro</p>
+		<p><i class="icon-camera-retro icon-3x"></i> icon-camera-retro</p>
+		<p><i class="icon-camera-retro icon-4x"></i> icon-camera-retro</p>
+<pre>
+&lt;p&gt;&lt;i class=&quot;icon-camera-retro icon-large&quot;&gt;&lt;/i&gt; icon-camera-retro&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;icon-camera-retro icon-2x&quot;&gt;&lt;/i&gt; icon-camera-retro&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;icon-camera-retro icon-3x&quot;&gt;&lt;/i&gt; icon-camera-retro&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;icon-camera-retro icon-4x&quot;&gt;&lt;/i&gt; icon-camera-retro&lt;/p&gt;
+</pre>
+	<p>以上图标分别对应下方代码，当然了个人认为没这个必要，字体大小更改也比较方便吗。</p>
+	<p>还有个问题，就是在代码中尖括号，以及双引号的写法，这个看代码吧。&lt; &gt; &quot; &quot;</p>
+	</div>
+	<div class="footer"><h3>Times erodes all such beauty,but what it cannot diminish is the wonderful workings of your mind,your humor,your kindness and your moral courage.<br>时间可以吞噬一切，但是它丝毫不能减少的是你伟大的思想、幽默、善良和勇气。--《小妇人》</h3></div>
+</body>
+</html>

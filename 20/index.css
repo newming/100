@@ -1,0 +1,33 @@
+.main{
+	width: 70%;
+	color:#808080;
+	margin:0 auto;
+}
+.main h2{
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+.main p{
+	line-height: 1.8;
+	margin-bottom: 12px;
+	margin-top: 12px;
+	text-indent: 2em;
+}
+.code{
+	background-color: #333;
+	text-indent: 0px;
+	padding:10px;
+	color:#ccc;
+}
+.main span{
+	color:red;
+	font-weight: bold;
+}
+.main ol li{
+	padding-left: 2em;
+	list-style-position: inside;
+	line-height: 1.8;
+}
+.main li span{
+	color:blue;
+}

@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font:5vw "Microsoft Yahei";
+	color:#fff;
+	height: 100%;
+	overflow: hidden;
+}
+.page{
+	height: 100vh;
+	position: relative;
+	line-height: 100vh;
+	text-align: center;
+	overflow: hidden;
+}
+.page .bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+}
+/*page1*/
+#page1 .bg{
+	background-color: teal;
+}
+
+/*page2*/
+#page2{
+	display: none;
+	-webkit-transition:0.5s;
+			transition: 0.5s;
+}
+#page2.fadeout{
+	opacity: 0.3;
+	-webkit-transform: translate(0,-100%);
+			transform: translate(0,-100%);
+}
+#page2 .p2_loading{
+	background-color: red;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-animation: p2_loading 1s linear forwards;
+			animation: p2_loading 1s linear forwards;
+}
+@-webkit-keyframes p2_loading {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes p2_loading {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+#page2 .bg{
+	background-color: orange;
+}
+
+/*page3*/
+#page3{
+	-webkit-transition:0.5s;
+			transition: 0.5s;
+}
+#page3.fadein{
+	-webkit-transform: translate(0,-100%);
+			transform: translate(0,-100%);
+}
+#page3 .bg{
+	background-color: green;
+}
+
+/*page4*/
+#page4 .bg{
+	background-color: #d60b3b;
+}

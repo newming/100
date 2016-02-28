@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>续：nth选择器</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 70%;
+			margin: 0 auto;
+			color:#808080;
+		}
+		.main h2{
+			margin:10px;
+		}
+		.main h4{
+			margin:10px;
+		}
+		.main span{
+			color:blue;
+			font-weight: bold;
+		}
+		.main p{
+			text-indent: 2em;
+			line-height: 1.8;
+		}
+	</style>
+	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+	<div class="top"><h1>续：nth选择器</h1>
+		<h3>日期：2015.12.15</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../12/金贵晟虹之间.mp3" type="audio/mpeg" />
+		</audio>
+		<h2 align="center">CSS3的:nth选择器</h2>
+		<h4>1. <span>:fist-child</span>选择某个元素的第一个子元素；</h4>
+		<h4>2. <span>:last-child</span>选择某个元素的最后一个子元素；</h4>
+		<h4>3. <span>:nth-child()</span>选择某个元素的一个或多个特定的子元素；</h4>
+		<p>:nth-child()可以定义他的值（值可以是整数，也可以是表达式），表达式的字母只能为n，n从零开始取，不如2n，则选择的是偶数项。或者是n+5、-n-3</p>
+		<h4>4. <span>:nth-last-child()</span>选择某个元素的一个或多个特定的子元素，从这个元素的最后一个子元素开始算；</h4>
+		<p>":nth-last-child()"选择器和前面的":nth-child()"很相似，只是这里多了一个last，所以他起的作用就和前面的":nth-child"不一样了，他只要是从最后一个元素开始算，来选择特定元素。</p>
+		<h4>5. <span>:nth-of-type()</span>选择指定的元素；</h4>
+		<p>:nth-of-type类似于:nth-child，不同的是他只计算选择器中指定的那个元素,其实我们前面的实例都是指定了具体的元素，这个选择器主要对用来定位元素中包含了好多不同类型的元素是很有用处，比如说，我们div.demo下有好多p元素，li元素，img元素等，但我只需要选择p元素，并让他每隔一个p元素就有不同的样式，那我们就可以简单的写成：</p>
+		<p>.demo p:nth-of-type(even) {background-color: lime;}</p>
+		<h4>6. <span>:nth-last-of-type()</span>选择指定的元素，从元素的最后一个开始计算；</h4>
+		<p>这个选择器不用说大家都能想得到了，他和前面的:nth-last-child一样使用，只是他指一了元素的类型而以。</p>
+		<h4>7. <span>:first-of-type</span>选择一个上级元素下的第一个同类子元素；</h4>
+		<h4>8. <span>:last-of-type</span>选择一个上级元素的最后一个同类子元素；</h4>
+		<p>:first-of-type和:last-of-type这两个选择器就类似于:first-child和:last-child;不同之处就是指定了元素的类型。</p>
+		<p>:nth-of-type,:nth-last-of-type;:first-of-type和:last-of-type实际意义并不是很大，我们前面讲的:nth-child之类选择器就能达到这此功能，不过大家要是感兴趣还是可以了解一下，个人认为实用价值并不是很大。此类说法仅供参考。</p>
+		<h4>9. <span>:only-child</span>选择的元素是它的父元素的唯一一个了元素；</h4>
+		<h4>10. <span>:only-of-type</span>选择一个元素是它的上级元素的唯一一个相同类型的子元素；</h4>
+		<p>:only-of-type是表示一个元素他有很多个子元素，而其中只有一个子元素是唯一的，那么我们使用这种选择方法就可以选择中这个唯一的子元素。</p>
+		<h4>11. <span>:empty</span>选择的元素里面没有任何内容。</h4>
+		<p>:empty是用来选择没有任何内容的元素，这里没有内容指的是一点内容都没有，哪怕是一个空格，比如说，你有三个段落，其中一个段落什么都没有，完全是空的，你想这个p不显示，那你就可这样来写：</p>
+		<p>p:empty {display: none;}</p>
+		<p>具体内容请进入codepen查看，css效果现在全部是灰色的呢</p>
+		<p data-height="268" data-theme-id="0" data-slug-hash="eJJzjo" data-default-tab="result" data-user="newming" class='codepen'>See the Pen <a href='http://codepen.io/newming/pen/eJJzjo/'>eJJzjo</a> by newming (<a href='http://codepen.io/newming'>@newming</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+	</div>
+	<div class="footer"><h3>Don't tell me how hard you work.Tell me how much you get done.<br>你有多努力无需多谈，重要的是你完成了多少计划之中的事。</h3></div>
+</body>
+</html>
+

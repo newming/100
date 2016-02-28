@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 使用</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main .xian{
+			height: 2px;
+			background-color: #aaa;
+			margin: 10px auto;
+		}
+		.main p span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>JavaScript 使用</h1>
+		<h3>日期：2016.1.5</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h3>HTML 中的脚本必须位于 &lt;script&gt; 与 &lt;/script&gt; 标签之间。</h3>
+		<h3>脚本可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 部分中。</h3>
+		<div class="xian"></div>
+		<h3>&lt;script&gt; 标签</h3>
+		<p>如需在 HTML 页面中插入 JavaScript，请使用 &lt;script&gt; 标签。</p>
+		<p>&lt;script&gt; 与 &lt;/script&gt; 会告诉 JavaScript 在何处开始和结束。</p>
+		<p>那些老旧的实例可能会在 &lt;script&gt; 标签中使用 type="text/javascript"。现在已经不必这样做了。JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。</p>
+		<div class="xian"></div>
+
+		<h3>&lt;head&gt; 或 &lt;body&gt; 中的 JavaScript</h3>
+		<p>可以在 HTML 文档中放入不限数量的脚本。</p>
+		<p>脚本可位于 HTML 的 &lt;body&gt; 或 &lt;head&gt; 部分中，或者同时存在于两个部分中。</p>
+		<p>通常的做法是把函数放入 &lt;head&gt; 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。</p>
+		<div class="xian"></div>
+
+		<h3>外部的 JavaScript</h3>
+		<p>也可以把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码。</p>
+		<p>外部 JavaScript 文件的文件扩展名是 .js。</p>
+		<p>如需使用外部文件，请在 &lt;script&gt; 标签的 &quot;src&quot; 属性中设置该 .js 文件：</p>
+		<p>在 &lt;head&gt; 或 &lt;body&gt; 中引用脚本文件都是可以的。实际运行效果与您在 &lt;script&gt; 标签中编写脚本完全一致。</p>
+		<p><span>提示：</span>外部脚本不能包含 &lt;script&gt; 标签。</p>
+	</div>
+	<div class="footer"><h3>Do not let what you cannot do interfere with what you can do.<br>别让你不能做的事妨碍到你能做的事。</h3></div>
+</body>
+</html>

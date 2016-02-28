@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 5 Video + DOM</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>HTML 5 Video + DOM</h1>
+		<h3>日期：2016.1.2</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<!-- <source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" /> -->
+		</audio>
+		<h3>HTML5 &lt;video&gt; 使用 DOM 进行控制</h3>
+		<p>HTML5 &lt;video&gt; 元素同样拥有方法、属性和事件。</p>
+		<h3>实例：</h3>
+		<div style="text-align:center;">
+			<button onclick="playPause()">播放/暂停</button> 
+			<button onclick="makeBig()">大</button>
+			<button onclick="makeNormal()">中</button>
+			<button onclick="makeSmall()">小</button>
+			<br /> 
+			<video id="video1" width="420" style="margin-top:15px;" poster="video-loading.jpg">
+				<source src="LOL.mp4" type="video/mp4" />
+				<!-- <source src="/example/html5/mov_bbb.ogg" type="video/ogg" /> -->
+				Your browser does not support HTML5 video.
+			</video>
+		</div> 
+		<p>上面的例子调用了两个方法：play() 和 pause()。它同时使用了两个属性：paused 和 width。</p>
+		<p>注释：在所有属性中，只有 videoWidth 和 videoHeight 属性是立即可用的。在视频的元数据已加载后，其他属性才可用。</p>
+		<p><a href="http://www.w3school.com.cn/html5/html_5_video_dom.asp">参考网站</a></p>
+
+		<script type="text/javascript">
+			var myVideo=document.getElementById("video1");
+
+			function playPause()
+			{ 
+				if (myVideo.paused) 
+					myVideo.play(); 
+				else 
+					myVideo.pause(); 
+			} 
+
+			function makeBig()
+			{ 
+				myVideo.width=560; 
+			} 
+
+			function makeSmall()
+			{ 
+				myVideo.width=320; 
+			} 
+
+			function makeNormal()
+			{ 
+				myVideo.width=420; 
+			} 
+		</script> 
+	</div>
+	<div class="footer"><h3>You can't be brave if you've only had wonderful things happen to you.<br>如果你只经历过美好，何来勇敢！</h3></div>
+</body>
+</html>

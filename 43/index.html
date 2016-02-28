@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 输出</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main .xian{
+			height: 2px;
+			background-color: #aaa;
+			margin: 10px auto;
+		}
+		.main span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>JavaScript 输出</h1>
+		<h3>日期：2016.1.6</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="科技感.mp3" type="audio/mpeg" />
+		</audio>
+		<h3>JavaScript 通常用于操作 HTML 元素。</h3>
+		<div class="xian"></div>
+
+		<h3>操作 HTML</h3>
+		<p>如需从 JavaScript 访问某个 HTML 元素，您可以使用 document.getElementById(id) 方法。</p>
+		<p>请使用 "id" 属性来标识 HTML 元素：</p>
+		<h3>实例：</h3>
+		<p>通过指定的 id 来访问 HTML 元素，并改变其内容：</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;My First Web Page&lt;/h1&gt;
+&lt;p id="demo"&gt;My First Paragraph&lt;/p&gt;
+&lt;script&gt;
+document.getElementById("demo").innerHTML="My First JavaScript";
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+		<h1>My First Web Page</h1>
+		<p id="demo">My First Paragraph.</p>
+		<p><span>JavaScript 由 web 浏览器来执行。在这种情况下，浏览器将访问 id="demo" 的 HTML 元素，并把它的内容（innerHTML）替换为 "My First JavaScript"。</span>以上为例子</p>
+		<div class="xian"></div>
+
+		<h3>写到文档输出</h3>
+		<p>下面的例子直接把 &lt;p&gt; 元素写到 HTML 文档输出中：</p>
+		<h3>实例：</h3>
+<pre>
+&lt;h1&gt;My First Web Page&lt;/h1&gt;
+&lt;script&gt;
+document.write("&lt;p&gt;My First JavaScript&lt;/p&gt;");
+&lt;/script&gt;
+</pre>
+		<h1>My First Web Page</h1>
+
+		<script>
+			document.write("<p>My First JavaScript</p>");
+			document.write('<h2>It is my web.</h2>')
+		</script>
+
+		<div class="xian"></div>
+
+		<h3><span>警告：</span></h3>
+		<p>使用 document.write() 仅仅向文档输出写内容。</p>
+		<p>如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖：</p>
+		<h3>实例：</h3>
+<pre>
+&lt;h1&gt;My First Web Page&lt;/h1&gt;
+&lt;p&gt;My First Paragraph.&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;点击这里&lt;/button&gt;
+&lt;script&gt;
+function myFunction()
+{
+document.write("糟糕！文档消失了。");
+}
+&lt;/script&gt;
+</pre>
+		
+		<h1>My First Web Page</h1>
+
+		<p>My First Paragraph.</p>
+
+		<button onclick="myFunction()">点击这里</button>
+
+		<script>
+			function myFunction()
+		{
+			document.write("糟糕！文档消失了。");
+		}
+		</script>
+
+		<div class="xian"></div>
+
+		<h3>Windows 8 中的 JavaScript</h3>
+		<p><span>提示：</span>微软支持通过 JavaScript 创建 Windows 8 app。</p>
+		<p>对于因特网和视窗操作系统，JavaScript 都意味着未来。</p>
+	</div>
+	<div class="footer"><h3>It matters not what you are thought to be,but what you are.<br>重要的不是别人怎么看你，而是你是怎样的人。</h3></div>
+	<script>
+		document.getElementById("demo").innerHTML="My First JavaScript";
+	</script>
+</body>
+</html>

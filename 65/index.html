@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>以多种方式调用脚本</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<script src="script.js"></script>
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin-bottom: 10px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+			margin: 10px 0;
+		}
+		.main pre span{
+			color:#fff;
+		}
+		.main p span{
+			color:red;
+		}
+		table{
+			border-collapse: collapse;
+			color: #000;
+		}
+		th,td{
+			padding:10px;
+			border:2px solid #666;
+			text-align: center;
+			width: 20%;
+		}
+		#free,.pickedBG{
+			background-color: #f66;
+		}
+		.winningBG{
+			background-image: url(../50/redFlash.gif);
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>BINGO卡片（8）</h1>
+		<h3>日期：2016.1.28</h3>
+	</div>
+	<div class="main">
+
+		<h3>Create a Bingo Card</h3>
+
+		<table>
+			<tr>
+				<th>B</th>
+				<th>I</th>
+				<th>N</th>
+				<th>G</th>
+				<th>O</th>
+			</tr>
+			<tr>
+				<td id="square0">&nbsp;</td>
+				<td id="square5">&nbsp;</td>
+				<td id="square10">&nbsp;</td>
+				<td id="square14">&nbsp;</td>
+				<td id="square19">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square1">&nbsp;</td>
+				<td id="square6">&nbsp;</td>
+				<td id="square11">&nbsp;</td>
+				<td id="square15">&nbsp;</td>
+				<td id="square20">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square2">&nbsp;</td>
+				<td id="square7">&nbsp;</td>
+				<td id="free">Free</td>
+				<td id="square16">&nbsp;</td>
+				<td id="square21">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square3">&nbsp;</td>
+				<td id="square8">&nbsp;</td>
+				<td id="square12">&nbsp;</td>
+				<td id="square17">&nbsp;</td>
+				<td id="square22">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square4">&nbsp;</td>
+				<td id="square9">&nbsp;</td>
+				<td id="square13">&nbsp;</td>
+				<td id="square18">&nbsp;</td>
+				<td id="square23">&nbsp;</td>
+			</tr>
+		</table>
+
+		<p><a href="index.html" id="reload">Click here</a> to create a new card</p>
+		
+		<p>到目前为止，脚本都是在加载页面时自动运行的。但是在现实环境中，常常希望让用户对脚本有更多的控制能力，甚至允许他们控制脚本在何时运行。在这个示例中，脚本仍然是在加载页面时运行。但是，还允许用户单击页面底部的链接来重新运行脚本，这样就可以完全在浏览器中生成Bingo卡片，而<span>不需要从服务器重新加载页面</span>。这向用户提供了快速的响应，而且不会长生服务器负载。</p>
+
+<pre>
+window.onload = initAll;
+
+var usedNums = new Array(76);
+
+function initAll () {
+	if (document.getElementById){
+<span>	document.getElementById("reload").onclick = anotherCard;
+		newCard();</span>//单击是调用anotherCard函数，否则newCard
+	}
+	else {
+		alert("Sorry,your browser doesn't support this script.")
+	}
+}
+<span>
+function newCard(){
+	for (var i = 0; i < 24 ; i++) {
+		setSquare(i);
+	}
+}
+</span>
+function setSquare(thisSquare){
+	var currSquare = "square" + thisSquare;
+	
+	var colPlace = new Array(0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4);
+	var colBasic = colPlace [thisSquare] * 15;
+	
+	var newNum;
+	do{
+		newNum = colBasic + getNewNum() + 1;
+	}
+	while (usedNums[newNum]);
+
+	usedNums[newNum] = true;
+	document.getElementById(currSquare).innerHTML = newNum;
+}
+
+function getNewNum() {
+	return Math.floor(Math.random() * 15);
+}
+<span>
+function anotherCard() {
+	for (var i=1; i < usedNums.length; i++){
+		usedNums[i]=false;//将usedNums[]中的元素设置为false，可以重新利用这些数
+	}
+	newCard();//调用newCard函数，重新生成卡片
+	return false;//返回false值，是浏览器不尝试加载链接的href地址
+}</span>
+</pre>
+
+	</div>
+
+	<div class="footer"><h3>The best and most beautiful things in the world cannot be seen or even touched.They must be felt with the heart.<br>世界上最美好的事物看不着也摸不到，它们只能用心感觉。</h3></div>
+</body>
+</html>

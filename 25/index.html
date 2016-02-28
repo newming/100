@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>console.log 的使用</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="shortcut icon" href="littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.but{
+			width: 40px;
+			height: 40px;
+			background-color: deeppink;
+			position: absolute;
+			color:#fff;
+			text-align: center;
+			line-height: 40px;
+			top:210px;
+			left: 30px;
+			cursor: pointer;
+			/*z-index: 1;*/
+		}
+		.box{
+			color:#fff;
+			text-align: center;
+			line-height: 100px;
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: teal;
+			transition: all 0.5s .3s;
+			/*z-index: -1;*/
+			transform:translateX(-100%);
+		}
+		.box.move{
+			transform:translateX(0%);
+		}
+		.sidebar{
+			position: fixed;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 260px;
+			background-color: deeppink;
+			opacity: 0.5;
+		}
+		.main h2{
+			color:#808080;
+			text-align: center;
+			/*margin: 10px;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>console.log 的使用</h1>
+		<h3>日期：2015.12.19</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h2>console.log 的使用以及position:fixed的特殊用法</h2>
+		<div class="but">click</div>
+		<div class="box">menu</div>
+		<div class="sidebar"></div>
+	</div>
+	<div class="footer"><h3>The secret of success in life is for a man to be ready for his opportunity when it comes.<br>人生成功的秘密在于，当机会来临时，他已经做好准备。</h3></div>
+<script>
+	$('.but').click(function(){
+		console.log("hahahah");
+		$('.box').addClass('move');
+	});
+	$('.box').click(function(){
+		$('.box').removeClass('move')
+	})
+</script>
+</body>
+</html>

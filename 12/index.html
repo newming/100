@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position:fixed</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		body{
+			background: radial-gradient(ellipse at center, rgba(130,189,245,1) 0%, rgba(57,101,148,1) 100%);
+			/*背景使用了h5的一个新的属性radial-gradient，具体是啥不清楚。可以查阅http://www.cssmatic.com*/
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			/*此处使用了背景固定，背景同样可以是图片*/
+		}
+		.top{
+			position: fixed;
+			width: 100%;
+			top:0;
+		}
+		.main{
+			margin-top: 150px;
+		}
+		.main h1{
+			color:#fff;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		.main audio{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>position:fixed</h1>
+		<h3>日期：2015.12.6</h3>
+	</div>
+	<div class="main">
+	<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">    <!-- hidden="hidden" 隐藏控制菜单 -->
+		<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+		<source src="金贵晟虹之间.mp3" type="audio/mpeg" />
+	</audio>
+		<h1>top使用了position: fixed属性</h1>
+		<h1>它会变得如同float一样不在占位</h1>
+		<h1>如同给了他一个position：absolute</h1>
+		<h1>他是以body为基点的吧</h1>
+		<h1>所以可以解决的方法是</h1>
+		<h1>1、给下边盒子一个padding-top</h1>
+		<h1>2、或者放一个空盒子占位</h1>
+		<h1>3、但是我发现如果给top一个top:0;</h1>
+		<h1>下边盒子使用margin时就不会影响top的位子</h1>
+		<h1>好吧，三种解决办法</h1>
+		<h1>同时背景也使用了一个不晓得的东东</h1>
+	</div>
+	<div class="footer"><h3>版权所有 翻版必究</h3></div>
+</body>
+</html>

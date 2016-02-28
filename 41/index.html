@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 简介</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main .xian{
+			height: 2px;
+			background-color: #aaa;
+			margin: 10px auto;
+		}
+		.main p span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>JavaScript 简介</h1>
+		<h3>日期：2016.1.4</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h3>JavaScript 是世界上最流行的编程语言。</h3>
+		<h3>这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</h3>
+		<p><a href="http://www.w3school.com.cn/js/js_intro.asp">参考网站</a></p>
+		<div class="xian"></div>
+		<h3>JavaScript 是脚本语言</h3>
+		<p>JavaScript 是一种轻量级的编程语言。</p>
+		<p>JavaScript 是可插入 HTML 页面的编程代码。</p>
+		<p>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</p>
+		<p>JavaScript 很容易学习。</p>
+		<div class="xian"></div>
+		<h3>我需要学习什么？</h3>
+		<p>下面是需要学到的主要内容。</p>
+		<div class="xian"></div>
+
+		<h3>JavaScript：写入 HTML 输出</h3>
+		<h3>实例:</h3>
+<pre>
+document.write("&lt;h1&gt;This is a heading&lt;/h1&gt;");
+document.write("&lt;p&gt;This is a paragraph&lt;/p&gt;");
+</pre>		
+		<p><span>提示：</span>
+		只能在 HTML 输出流中使用 <strong>document.write</strong>。
+		如果在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+		</p>
+		<div class="xian"></div>
+
+		<h3>JavaScript：对事件作出反应</h3>
+		<h3>实例：</h3>
+<pre>
+&lt;button type="button" onclick="alert('Welcome!')"&gt;点击这里&lt;/button&gt;
+</pre>
+		<button type="button" onclick="alert('Welcome!')">点击这里</button>
+		<p>alert() 函数在 JavaScript 中并不常用，但它对于代码测试非常方便。</p>
+		<p>onclick 事件是众多事件之一。</p>
+		<div class="xian"></div>
+
+		<h3>JavaScript：改变 HTML 内容</h3>
+		<p>使用 JavaScript 来处理 HTML 内容是非常强大的功能。</p>
+		<h3>实例：</h3>
+<pre>
+x=document.getElementById("demo")  //查找元素
+x.innerHTML="Hello JavaScript";    //改变内容
+</pre>	
+		<p id="demo">
+			JavaScript 能改变 HTML 元素的内容。
+		</p>
+		<button type="button" onclick="myFunction()">点击这里</button>
+
+		<p>经常看到 document.getElementByID("some id")。这个方法是 HTML DOM 中定义的。</p>
+		<p>DOM（文档对象模型）是用以访问 HTML 元素的正式 W3C 标准。</p>
+		<div class="xian"></div>
+
+		<h3>还有其他很多功能，这里就不罗列了，我也不太懂......</h3>
+		<h3>部分小常识</h3>
+		<p><span>提示：</span>JavaScript 与 Java 是两种完全不同的语言，无论在概念还是设计上。</p>
+		<p>Java（由 Sun 发明）是更复杂的编程语言。</p>
+		<p>ECMA-262 是 JavaScript 标准的官方名称。</p>
+		<p>JavaScript 由 Brendan Eich 发明。它于 1995 年出现在 Netscape 中（该浏览器已停止更新），并于 1997 年被 ECMA（一个标准协会）采纳。</p>
+		<h3>接下来会持续更新一系列的js内容。</h3>
+	</div>
+	<div class="footer"><h3>There are no limits.There are only plateaus,and you must not stay there-you might go there beyond them.<br>没有所谓的极限，看似险难的高原，你不是待在哪里，而是超越它。</h3></div>
+	<script>
+		document.write("<h1>This is a heading</h1>");
+		document.write("<p>This is a paragraph.</p>");
+	
+			function myFunction()
+		{
+			x=document.getElementById("demo");  // 找到元素
+			x.innerHTML="Hello JavaScript!";    // 改变内容
+		};
+		</script>
+</body>
+</html>

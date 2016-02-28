@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>汉堡包按钮来了</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 70%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+		}
+		.box{
+			width: 100%;
+			height: 40%;
+		}
+		.button{
+			/*width: 40px;*/
+			/*height: 40px;*/
+			position: absolute;
+			/*background-color: deeppink;*/
+			left: 30px;
+			top: 30px;
+			/*text-align: center;*/
+			/*line-height: 40px;*/
+			color:#fff;
+			cursor: pointer;
+		}
+		.menu li{
+			list-style: none;
+			line-height: 2.5;
+		}
+		.menu li a{
+			text-decoration: none;
+			color:#808080;
+			display: block;
+			width: 100%;
+			font-size: 1.2em;
+		}
+		.menu li a:hover{
+			background-color: lightblue;
+		}
+		.menu{
+			position: fixed;
+			top:0;
+			left: 0;
+			bottom: 0;
+			width: 250px;
+			background-color: white;
+			text-align: center;
+			padding-top: 100px;
+			transition: all 0.3s .2s;
+			transform:translateX(-100%);
+		}
+		.menu.move{
+			transform:translateX(0%);
+		}
+		.hei{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			opacity: 0;
+			background-color:#000;
+		}
+		.hei.alpha{
+			display:block;
+			background-color:#000;
+			opacity: 0.4;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="top"><h1>汉堡包按钮来了</h1>
+		<h3>日期：2015.12.23</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<div class="button"><i class="icon-reorder icon-2x"></i></div><!-- 小图标，这里有个字体图标的用法 -->
+		<div class="hei"></div><!-- 黑色半透明的大按钮 -->
+		<div class="menu">
+			<ul>
+				<li><a href="../index.html">首页</a></li>
+				<li><a href="../index.html">登录</a></li>
+				<li><a href="../index.html">注册</a></li>
+			</ul>
+		</div>
+		<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque beatae ut alias dolor quae aperiam nam doloremque architecto iure repudiandae enim voluptatibus ullam necessitatibus minima, placeat autem aliquid eos molestiae unde atque laudantium sapiente dolorum consequatur! Asperiores assumenda ad sapiente explicabo porro debitis minima, autem est atque quibusdam ab commodi, ipsa, dolores. Dicta facilis totam quae nam quas autem iusto impedit, unde porro aperiam obcaecati ratione labore a ipsa itaque quaerat sapiente, similique inventore distinctio deleniti vitae. At ea nobis veritatis officia labore impedit recusandae reprehenderit possimus, commodi laborum. Ipsa alias, eius iusto. Deserunt natus repellendus accusantium, nostrum a autem. Quos eos voluptatem suscipit a quis dolor blanditiis molestiae similique mollitia, rerum repudiandae ea ex vel placeat delectus voluptatum iusto dicta consectetur ipsum consequuntur aspernatur. Dolore quis quas dolorem aperiam inventore dolor doloremque, adipisci repudiandae nam veritatis omnis architecto vel harum sequi, fugit error, ex saepe voluptas laudantium incidunt voluptatum. Expedita esse optio ipsam ipsum ex, quas, dolores officiis fuga eligendi labore deleniti! Cum quo obcaecati fugiat voluptate architecto itaque facilis nemo praesentium cupiditate natus repellat explicabo maiores, quidem ullam consectetur tempora! Quisquam sunt illo quibusdam dignissimos ab hic facilis. Deserunt expedita cumque nulla unde magnam delectus placeat temporibus earum ipsum, quasi nam distinctio animi facere, sit dolorum. Reiciendis impedit minima accusantium molestias harum. Perspiciatis vel, ab nihil possimus facilis ipsam ex maxime dicta excepturi, corrupti reprehenderit modi. Deserunt neque atque nam consequatur unde esse rerum in, sequi odit. Obcaecati repudiandae ut fuga eveniet nisi aperiam labore optio minima sit sed atque incidunt, quisquam recusandae necessitatibus odio aspernatur possimus rerum quidem eos et explicabo temporibus sunt! Beatae fuga reprehenderit eligendi repellendus quas dolorum qui sequi animi maxime nobis quos ipsa quae, repellat vel voluptates, rerum, maiores esse consectetur libero? Possimus ad aliquid sint dignissimos totam ab, saepe quis nostrum!</div><!-- 垃圾文字盒子 -->
+	</div>
+	<div class="footer"><h3>The most wonderful thing about love is that it turns you and me to us.<br>爱情中最美好的事，莫过于你和我，最终成为我们。</h3></div>
+	<script>
+	$('.button').click(function(){
+		console.log("hahahah");
+		$('.menu').addClass('move');
+		$('.hei').addClass('alpha');
+	});
+	$('.hei').click(function(){
+		$('.menu').removeClass('move')
+		$('.hei').removeClass('alpha')
+	})
+	</script>
+</body>
+</html>

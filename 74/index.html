@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>a little summary</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		ul li{
+			list-style-position: inside;
+		}
+		li p{
+			text-indent: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>前两节的总结</h1>
+		<h3>日期：2016.2.6</h3>
+	</div>
+	<div class="main">
+
+		<p>前两节主要是做了一个新年的贺岁页面，第一个是按照慕课网上的教程完全走下来的下面又对其主要的代码技术提取出来做了个小的demo。</p>
+		<p>这个贺岁的网页是由三个整页组成，在形式上和fullPages插件的效果很类似，不过这个的切换方式是click，不是上下滑。</p>
+		<ul>
+			<li>多用vw、vh作单位。
+			    <p>
+				首先因为是做的手机端的网页，少不了viewport。因为要适应多种屏幕，以及放置了多张图片，为了使图片的定位更准确，在这里采用了我以前没用过的单位“vh、vw”,分别对应为设备高度、宽度。</p>
+			</li>
+			<li>position:relative|absolute
+				<p>这个案例中更加充分的体现了绝对定位、相对定位的用法。</p>
+			</li>
+			<li>body{overflow:hidden;}
+				<p>body下的overf：hidden;这个用法还是第一次用，可以实现单页出现。即只有当前屏幕上内容显示，其余皆隐藏。</p>
+			</li>
+			<li>一些原生js代码
+				<p>练习使用了一些原生的js，也不太懂。</p>
+			</li>
+		</ul>
+	</div>
+	<div class="footer"><h3>Readers are plentiful.Thinkers are rare.<br>阅读的人很多，但思考的人很少。</h3></div>
+</body>
+</html>

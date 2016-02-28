@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>viewport</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../29/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			color:#808080;
+			line-height: 1.8;
+			width: 80%;
+			margin: 0 auto;
+		}
+		.main pre{
+			background-color: #333;
+			margin: 10px;
+			overflow: scroll;
+		}
+		@media (min-width: 460px){
+			.main pre{
+				overflow: visible;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>viewport</h1>
+		<h3>日期：2015.12.25</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<p>先说下问题。手机上的浏览器默认宽度为960px，并不是每个设备屏幕的真实宽度，所以造成我们所做的页面在手机上显示时会缩小，也就是说，如果我们做了一个960px的页面，在手机上则是刚好铺满全屏，如果小于这个宽度，这显示不全，相应的字体的大小会缩小很多，导致页面内容根本无法读取。</p>
+		<p>所以，为了做成一个响应式的网站，首先要解决这个问题，这里应用到 viewport 属性，视窗。下面是这句代码的具体写法，放在head内。</p>
+<pre>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+</pre>
+	</div>
+	<div class="footer"><h3>The greatest gift that you can give to others is the gift of unconditional love and acceptance.<br>你能给别人的最好的礼物，是无条件的爱与包容。</h3></div>
+</body>
+</html>

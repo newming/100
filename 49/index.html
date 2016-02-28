@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../47/bootstrap.min.css">
+	<style>
+		body{
+			font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;
+		}
+		pre code{
+			color:blue;
+		}
+		.box{
+			width: 90%;
+			margin: 20px auto;
+			background-image: url(bg.png);
+			height: 500px;
+			text-align: center;
+			color: #fff;
+		}
+		.ex1{
+			-webkit-background-size: 600px ;
+			background-size: 600px ;
+		}
+		.ex2{
+			-webkit-background-size:90%;
+			background-size:90%;
+		}
+		.ex3{
+			-webkit-background-size: cover;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+		.ex4{
+			-webkit-background-size: contain;
+			background-size: contain;
+		}
+	</style>
+</head>
+<body>
+	<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+		<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+		<source src="../43/科技感.mp3" type="audio/mpeg" />
+	</audio>
+
+
+	<div class="container theme-showcase" role="main">
+
+		<div class="jumbotron">
+			<h1>CSS3 background-size 属性</h1>
+			<p>日期：2016.1.12</p>
+			<p><a href="http://http://www.w3school.com.cn/cssref/pr_background-size.asp" class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
+		</div>
+		<div class="page-header">
+			<h3>实例</h3>
+			<p>规定背景图像的尺寸：</p>
+<pre>
+div
+{
+background:url(img_flwr.gif);
+<code>background-size:80px 60px;</code>
+background-repeat:no-repeat;
+}
+</pre>
+	</div>
+
+	<div class="page-header">
+		<h3>语法</h3>
+<pre>
+background-size: <i>length</i>|<i>percentage</i>|cover|contain;
+</pre>
+
+	</div>
+
+	<div class="page-header">
+		<div class="row">
+			<div class="col-md-6">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>值</th>
+							<th>描述</th>
+							<th>个人说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>length</td>
+							<td>设置背景图像的高度和宽度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。</td>
+							<td>给予背景图固定大小，px像素单位，往常是只能给图片调整大小的。</td>
+						</tr>
+						<tr>
+							<td>percentage</td>
+							<td>以父元素的百分比来设置背景图像的宽度和高度。第一个值设置宽度，第二个值设置高度。如果只设置一个值，则第二个值会被设置为 "auto"。</td>
+							<td>这种用法是给予百分数大小，可以随窗口大小改变，如同流媒体图片。可能使图像变形。</td>
+						</tr>
+						<tr>
+							<td>cover</td>
+							<td>把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。背景图像的某些部分也许无法显示在背景定位区域中。</td>
+							<td>等比例放大图像，不会使图像变形，又可以完全覆盖背景区域，可以配合background-position控制由何处缩放。</td>
+						</tr>
+						<tr>
+							<td>contain</td>
+							<td>把图像图像扩展至最大尺寸，以使其宽度或高度完全适应内容区域。</td>
+							<td>这个属性是等比例放大或缩小图像，使宽度或高度一方达到适应内容区域。</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="page-header">
+			<h4>以下四个分别为四种情况，内容区域（盒子大小为width90%，height500px）</h4>
+			<div class="box ex1"><p>这里我设置了背景图宽度600px，高度没有设置，为auto</p></div>
+			<div class="box ex2"><p>这里设置了宽度90%，高度auto</p></div>
+			<div class="box ex3"><p>cover,比较好用，总是铺满内容区域，此处配合background-position：50% 50%;使图片从中心缩放。</p></div>
+			<div class="box ex4"><p>contain,这里高度适应内容区域，宽度不足。</p></div>
+
+		</div>
+		<div class="footer"><h3>Make each day count by setting specific goals to succeed,then putting forth every effort to exceed your own expectations.<br>每天设定一个目标，然后努力做到完美，甚至超乎你的想象。</h3></div>
+	</div>
+</body>
+</html>

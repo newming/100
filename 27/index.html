@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单一属性值的使用</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 70%;
+			margin: 0 auto;
+			color:#808080;
+		}
+		.main h4{
+			margin: 10px;
+		}
+		.main table{
+			border:1px solid blue;
+			margin-left: 10px;
+		}
+		.main td{
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>单一属性值的使用</h1>
+		<h3>日期：2015.12.21</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h4>首先先说下我的个人理解啊。比如在应用background类的属性值时，我们可以直接写为background:#000 noprpeat center center;也可以写作background-color:#000;这种形式。比如font类的。但是在应用transform时，有时需要设置单一的属性，但因为词汇量的问题，往往不得不完整写一遍默认属性值。下面对这些属性做个总结，主要是对一些属性单词的记忆。</h4>
+		<h4>本次先做几个总结，后续会逐渐增加。</h4>
+		<h4>1.transition: property duration timing-function delay;</h4>
+		<h4>默认值：all 0 ease 0</h4>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>transition-property</td>
+				<td>规定设置过渡效果的 CSS 属性的名称。</td>
+			</tr>
+			<tr>
+				<td>transition-duration</td>
+				<td>规定完成过渡效果需要多少秒或毫秒。</td>
+			</tr>
+			<tr>
+				<td>transition-timing-function</td>
+				<td>规定速度效果的速度曲线。（速度函数）</td>
+			</tr>
+			<tr>
+				<td>transition-delay</td>
+				<td>定义过渡效果何时开始。（延迟）</td>
+			</tr>
+		</table>
+		<h4>2.transition: property duration timing-function delay;</h4>
+		<h4>默认值：none 0 ease 0 1 normal</h4>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>animation-name</td>
+				<td>规定需要绑定到选择器的 keyframe 名称。</td>
+			</tr>
+			<tr>
+				<td>animation-duration</td>
+				<td>规定完成动画所花费的时间，以秒或毫秒计。</td>
+			</tr>
+			<tr>
+				<td>animation-timing-function</td>
+				<td>规定动画的速度曲线。</td>
+			</tr>
+			<tr>
+				<td>animation-delay</td>
+				<td>规定在动画开始之前的延迟。</td>
+			</tr>
+			<tr>
+				<td>animation-iteration-count</td>
+				<td>规定动画应该播放的次数。(n|infinite)</td>
+			</tr>
+			<tr>
+				<td>animation-direction</td>
+				<td>规定是否应该轮流反向播放动画。(normal|alternate)</td>
+			</tr>
+		</table>
+	</div>
+	<div class="footer"><h3>Every new begins with possibilities.It's up to us to fill it with the things that move us toward progerss and peace.<br>以无限可能性开始每一天。我们本身决定这这一天是否进步或安心。</h3></div>
+</body>
+</html>

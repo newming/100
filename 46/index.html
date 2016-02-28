@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复习下</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main .xian{
+			height: 2px;
+			background-color: #aaa;
+			margin: 10px auto;
+		}
+		.main span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>复习下</h1>
+		<h3>日期：2016.1.9</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../43/科技感.mp3" type="audio/mpeg" />
+		</audio>
+		
+		<p>最近忙于准备考试，耽搁了几天，考试过后会逐步补上。</p>
+		<p>考热统时，因为闲着没事，想了想最近的js内容，发现几个简单的语句也忘了，下面复习下。</p>
+		<div class="xian"></div>
+
+		<p id="demo">JavaScript 能改变 HTML 元素的内容。</p>
+		<button type="button" onclick="myFunction()">点击这里</button>
+
+		<button type="button" onclick="alert('hello world')">点击这里</button>
+
+		<script>
+
+			document.write('<h2>This is a paragraph.</h2>')	
+			document.write('<p>a text</p>')
+
+			function myFunction()
+			{
+				x=document.getElementById("demo");  // 找到元素
+				x.innerHTML="Hello JavaScript!";    // 改变内容
+			}
+		</script>
+	</div>
+	<div class="footer"><h3>The loving person makes other people feel good,and he is usually a happy person himself.<br>有爱心的人让人感到舒服，而他自己通常也是个快乐的人。</h3></div>
+</body>
+</html>

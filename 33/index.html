@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>autoprefixer厂商前缀</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>autoprefixer厂商前缀</h1>
+		<h3>日期：2015.12.27</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<p>css3属性中经常要写-webkit- -moz- -o- -ms-  </p>
+		<p>分别给 谷歌 苹果 opera 火狐 ie10 用的。为什么，下面谈下：</p>
+		<p>最开始的时候 CSS3产生的一个新属性 是一个浏览器的私有的，然后W3C 可能会拿来采用做个标准，再没公布标准之前 你就只能用私有属性（加前缀）来表达各自厂商的实现，主要是CSS3刚出现那会儿。</p>
+		<p>前缀另一个功能跟浏览器的版本有关，研究css3的应该了解点，不细说了。</p>
+		<p>解决方法：http://autoprefixer.github.io/</p>
+		<p>这个网站能够及时更新个浏览器对css的支持情况，使用方法比较简单，就是将需要加前缀的代码粘贴上去，会自动生成需要添加的前缀，在粘贴回来就行。</p>
+	</div>
+	<div class="footer"><h3>Acknowledging the good that you already have in your life is the foundation for all abundance.<br>感恩生活中的所有，是所有富足的基础。</h3></div>
+</body>
+</html>

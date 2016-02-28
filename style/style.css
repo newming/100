@@ -1,0 +1,52 @@
+/*comment css*/
+
+*{
+	margin:0;
+	box-sizing:border-box;
+	padding: 0;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+body{
+	font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;
+	-webkit-overflow-scrolling:touch; /*流畅滚动手机端*/
+}
+
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+
+
+/*section css*/
+.top{
+	text-align: center;
+	background-color: lightseagreen;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color:#fff;
+}
+.top h3{
+	margin-top: 20px;
+}
+.top a{
+	text-decoration: none;
+	color:#ddd;
+}
+.footer h3{
+	text-align: center;
+	background-color: lightseagreen;
+	padding: 40px;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	color:#fff;
+}

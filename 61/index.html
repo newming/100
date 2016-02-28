@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>visibility</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin-bottom: 10px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main .xian{
+			height: 2px;
+			background-color: #aaa;
+			margin: 10px auto;
+		}
+		.main span{
+			color:red;
+		}
+		table{
+			margin: 10px auto;
+			border-color: teal;
+		}
+		.box{
+			width: 50%;
+			height: 100px;
+			margin: 10px auto;
+			visibility: visible;
+			background-color: blue;
+			opacity: 1;
+			transition:all 1s 0.2s;
+		}
+		.box:hover{
+			visibility: hidden;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>CSS visibility 属性</h1>
+		<h3>日期：2016.1.24</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../43/科技感.mp3" type="audio/mpeg" />
+		</audio>
+
+		<h3>定义和用法</h3>
+		<p>visibility 属性规定元素是否可见。</p>
+		<p><span>提示：</span>即使不可见的元素也会占据页面上的空间。请使用 "display" 属性来创建不占据页面空间的不可见元素。</p>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>值</th>
+				<th>描述</th>
+			</tr>
+			<tr>
+				<td>visible</td>
+				<td>默认值。元素是可见的。</td>
+			</tr>
+			<tr>
+				<td>hiddle</td>
+				<td>元素是不可见的。</td>
+			</tr>
+			<tr>
+				<td>collapse</td>
+				<td>当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 "hidden"。</td>
+			</tr>
+			<tr>
+				<td>inherit</td>
+				<td>规定应该从父元素继承 visibility 属性的值。</td>
+			</tr>
+		</table>
+
+		<div class="box"></div>
+
+		<p>上面盒子通过visibility配合opacity，做到了过渡效果，那么这个属性有什么特点呢。</p>
+		<p>与opacity比较，它设置为隐藏时，可以触及下方内容。</p>
+		<p>与display:none;比较，它还占位。</p>
+		<p>之后我会尝试将它用在百页面首页。</p>
+	</div>
+	<div class="footer"><h3>The great thing in the world is not so much where we stand as in what direction we are moving.<br>这世界的美好之处不在于我们所处的位置，而在于我们所要到达的远方。</h3></div>
+</body>
+</html>

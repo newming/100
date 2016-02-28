@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>当transition遇上display</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<script src="../script/jQuery.js"></script>
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin-bottom: 10px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main .xian{
+			height: 2px;
+			background-color: #aaa;
+			margin: 10px auto;
+		}
+		.main span{
+			color:red;
+		}
+		#box {
+    		background: goldenrod;
+    		width: 300px;
+    		height: 300px;
+    		margin: 30px auto;
+    		transition: all .4s linear;
+    		/*visibility: visible;*/
+		}
+		.hidden {
+    		display: none;
+		}
+		.visuallyhidden {
+    		opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>当transition遇上display</h1>
+		<h3>日期：2016.1.23</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../43/科技感.mp3" type="audio/mpeg" />
+		</audio>
+
+		<p>相信大家在试用css3动画时候一定用过transition属性，相对于js动画来说用起来更快速简单。</p>
+		<p>但是当transition遇到display时，却无法生效了，这个问题在百页面的首页出现过，就是弹出的黑色块就是利用display:none;来隐藏掉的，之后的过渡效果就实现不了了。曾经想到要利用opacity解决，但是这个属性会使大黑块遮挡下方内容。</p>
+		<p>最近在网上刚好看了篇相关的帖子，<a href="http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=401725150&idx=2&sn=be1c703d71692569555797e40ab1ef71&scene=0#wechat_redirect">在这里</a>，刚好试下，</p>
+		<p>文章给出了3中方法，这里只展示了第二种。</p>
+		<div class="xian"></div>
+
+		<button>动画按钮</button>
+		<div id="box"></div>
+		
+		
+	</div>
+	<div class="footer"><h3>The art of being happy lies in the power of extracting happiness from common things.<br>快乐的艺术是由平凡事物提取快乐的能力。</h3></div>
+
+	<script>
+		var box = $('#box');
+			$('button').on('click', function () {
+    		if (box.hasClass('hidden')) {
+        		box.removeClass('hidden');
+        	setTimeout(function () {
+            	box.removeClass('visuallyhidden');
+        }, 20);
+    } 
+    else {
+        box.addClass('visuallyhidden');
+        box.one('transitionend', function(e) {
+            box.addClass('hidden');
+        });
+    }
+});
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<title>CSS3 border-image 属性</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			color:#808080;
+			width: 60%;
+			margin: auto;
+		}
+		.main h2,h4{
+			padding: 10px;
+		}
+		.main li{
+			list-style-position: inside;
+			padding-left: 30px;
+			line-height: 24px;
+		}
+		.box1,.box2,.box3{
+			float: left;
+			width: 200px;
+			padding:10px 20px;
+			border:15px solid transparent;
+			margin: 20px;
+			border-image: url(index.png) 30 30;
+		}
+		.box1{
+			border-image-repeat:stretch;
+		}
+		.box2{
+			border-image-repeat: round;
+		}
+		.box3{
+			border-image-repeat:repeat;
+		}
+		.footer{
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>CSS3 border-image 属性</h1>
+		<h3>日期：2015.12.17</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../12/金贵晟虹之间.mp3" type="audio/mpeg" />
+		</audio>
+		<h2>定义和用法</h2>
+		<h4>border-image 属性是一个简写属性，用于设置以下属性：</h4>
+		<ul>
+			<li>border-image-source 用在边框的图片的路径。</li>
+			<li>border-image-slice 图片边框向内偏移。</li>
+			<li>border-image-width 图片边框的宽度。</li>
+			<li>border-image-outset 边框图像区域超出边框的量。</li>
+			<li>border-image-repeat 图像边框是否应平铺(repeated)、铺满(rounded)或拉伸(stretched)。</li>
+		</ul>
+		<h4>默认值：none 100% 1 0 stretch</h4>
+		<h4>JavaScript 语法：object.style.borderImage="url(border.png) 30 30 round"</h4>
+		<h4>通常border-image-outset 省略不写了</h4>
+		<div class="box1">stretch 效果</div>
+		<div class="box2">round 效果</div>
+		<div class="box3">repeat 效果</div>
+	</div>
+	<div class="footer"><h3>It is a characteristic of wisdom not to do desperate things.<br>不做孤注一掷的事是智慧的表现。</h3></div>
+</body>
+</html>

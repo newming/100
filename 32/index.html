@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>viewport配合media</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			background-color: #333;
+			margin: 10px 0;
+			overflow: scroll;
+		}
+		@media (min-width: 460px){
+			.main pre{
+				overflow: visible;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>viewport配合media</h1>
+		<h3>日期：2015.12.26</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<p>今天主要是对百日百页面的响应式方面的功能做了改进，那么本页就此做一个简单的总结。</p>
+		<p>首先是设计思路，必须本着移动优先的原则，最先从窄屏出发设计，为了使网页在设备上的可读性更好，首先使用的是viewport属性，调整设备宽度等于正常水平，接下来就是内容的排布了，往往这个过程比较简单，因为大多数情况下是直接竖着下来就行，但是要注意在对于一些距离大小的设置是，要多用百分数、em、或者倍数等，这样要比px更好地适应屏幕。</p>
+		<p>下面就是逐步的增大屏幕宽度了，当我们感觉按当前排版很难看的时候，就是我们需要修改的时候，配合@media query，调整布局。</p>
+		<p>下面给出完整的viewport写法：</p>
+<pre>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+</pre>
+	</div>
+	<div class="footer"><h3>Much effort,much prosperity.<br>越努力，越幸运。</h3></div>
+</body>
+</html>

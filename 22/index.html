@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>try jQuery</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background-color: deeppink;
+			margin: 15% auto;
+		}
+		.main img{
+			width: 300px;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		.main h2{
+			text-align: center;
+			color:#808080;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>try jQuery</h1>
+		<h3>日期：2015.12.16</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../12/金贵晟虹之间.mp3" type="audio/mpeg" />
+		</audio>
+			<div class="box"></div>
+			<h2>一些其他的属性</h2>
+			<h2>peter老师的实例：<a href="http://happypeter.github.io/kiss/18">happypeter.github.io/kiss/18</a></h2>
+			<img src="image.png" alt="">
+	<script>
+		$('.box').click(function(){
+			alert('hello');
+		});
+	</script>
+	</div>
+	<div class="footer"><h3>The man who attracts luck carries with him the magnet of preparation.<br>吸引好运的人，总是在时刻准备着。</h3></div>
+</body>
+</html>

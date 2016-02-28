@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pre,overflow</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			background-color: #333;
+			padding: 10px;
+			overflow: auto;
+		}
+		.main table{
+			width: 90%;
+			border:1px solid blue;
+			margin: 10px;
+			text-align: center;
+		}
+		.main table th{
+			width: 15%;
+		}
+		.arc .no1{
+			width: 20%;	
+		}
+		.arc .no2{
+			width: 16%;
+		}
+		.arc .no3{
+			width: 54%;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>H5 video</h1>
+		<h3>日期：2015.12.29</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h4>参考网站：<a href="http://www.w3school.com.cn/html5/html_5_video.asp">W3School</a></h4>
+		<p>记得在上次比赛中用到过h5得新标签&lt;video&gt;,当时只是简单地使用，对于这个标签的详细用法并不是很详尽的了解，那么今天做一下总结。</p>
+		<p>直到现在，仍然不存在一项旨在网页上显示视频的标准。今天，大多数视频是通过插件（比如Flash）来显示的。然而，并非所有浏览器都拥有同样的插件。HTML5 规定了一种通过 video 元素来包含视频的标准方法。</p>
+		<h4>视频格式</h4>
+		<p>当前，video 元素支持三种视频格式：</p>
+
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>格式</th>
+				<th>IE</th>
+				<th>Firefox</th>
+				<th>Opera</th>
+				<th>Chrome</th>
+				<th>Safari</th>
+			</tr>
+			<tr>
+				<td>Ogg</td>
+				<td>No</td>
+				<td>3.5+</td>
+				<td>10.5+</td>
+				<td>5.0+</td>
+				<td>No</td>
+			</tr>
+
+			<tr>
+				<td>MPEG 4</td>
+				<td>9.0+</td>
+				<td>No</td>
+				<td>No</td>
+				<td>5.0+</td>
+				<td>3.0+</td>
+			</tr>
+
+			<tr>
+				<td>WebM</td>
+				<td>No</td>
+				<td>4.0+</td>
+				<td>10.6+</td>
+				<td>6.0+</td>
+				<td>No</td>
+			</tr>
+		</table>
+		<p>Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件</p>
+		<p>MPEG4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件</p>
+		<p>WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件</p>
+		<h4>如何工作</h4>
+
+		<p>如需在 HTML5 中显示视频，您所有需要的是：</p>
+<pre>
+&lt;video src=&quot;movie.ogg&quot; controls=&quot;controls&quot;&gt;
+&lt;/video&gt;
+</pre>
+	<p>control 属性供添加播放、暂停和音量控件。</p>
+	<p>包含宽度和高度属性也是不错的主意。</p>
+	<p>&lt;video&gt; 与 &lt;/video&gt; 之间插入的内容是供不支持 video 元素的浏览器显示的：</p>
+
+		<h4>实例</h4>
+
+<pre>
+&lt;video src=&quot;movie.ogg&quot; width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+</pre>
+		<p>上面的例子使用一个 Ogg 文件，适用于Firefox、Opera 以及 Chrome 浏览器。</p>
+
+		<p>要确保适用于 Safari 浏览器，视频文件必须是 MPEG4 类型。</p>
+
+		<p>video 元素允许多个 source 元素。source 元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式：</p>
+		<h4>实例</h4>
+<pre>
+&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
+  &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+</pre>
+		<h4>&lt;video&gt; 标签的属性</h4>
+		<table class="arc" border="1" cellspacing="0" cellpadding="0"> 
+		  <tr>
+		    <th class="no1">属性</th>
+		    <th class="no2">值</th>
+		    <th class="no3">描述</th>
+		  </tr>
+		  <tr>
+		    <td>autoplay</td>
+		    <td>autoplay</td>
+		    <td>如果出现该属性，则视频在就绪后马上播放。</td>
+		  </tr>
+		  <tr>
+		    <td>controls</td>
+		    <td>controls</td>
+		    <td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
+		  </tr>
+		  <tr>
+		    <td>height</td>
+		    <td><i>pixels</i></td>
+		    <td>设置视频播放器的高度。</td>
+		  </tr>
+		  <tr>
+		    <td>loop</td>
+		    <td>loop</td>
+		    <td>如果出现该属性，则当媒介文件完成播放后再次开始播放。</td>
+		  </tr>
+		  <tr>
+		    <td>preload</td>
+		    <td>preload</td>
+		    <td><p>如果出现该属性，则视频在页面加载时进行加载，并预备播放。</p><p>如果使用 &quot;autoplay&quot;，则忽略该属性。</p></td>
+		  </tr>
+		  <tr>
+		    <td>src</td>
+		    <td><i>url</i></td>
+		    <td>要播放的视频的 URL。</td>
+		  </tr>
+		  <tr>
+		    <td>width</td>
+		    <td><i>pixels</i></td>
+		    <td>设置视频播放器的宽度。</td>
+		  </tr>
+		</table>
+		<p>对于各个属性及值得测试可到参考网站进行。</p>
+	</div>
+	<div class="footer"><h3>You never saw a very busy person who was unhappy.<br>你从没见过一个忙碌的人不快乐。</h3></div>
+</body>
+</html>

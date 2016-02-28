@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clearfix 详解</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.container{
+  border:3px solid #000;
+}
+.left{
+  width: 20%;
+  background-color: #aaa;
+  height: 30px;
+  float: left;
+}
+.right{
+  width: 80%;
+  background-color: #666;
+  height: 30px;
+  float: right;
+}
+.box{
+  background-color: #333;
+}
+.main{
+  height: 30px;
+  background-color: teal;
+  width: 50%;
+  margin:0 auto;
+  margin-top:50px;
+}
+.box1{
+  background-color: #333;
+  margin-top: 20px;
+}
+.main1{
+  height: 30px;
+  background-color: teal;
+  width: 50%;
+  margin:0 auto;
+  margin-top:50px;
+}
+.top1{
+  height: 50px;
+  margin-bottom:30px;
+  background-color: yellow;
+}
+.bottom{
+  height: 50px;
+  margin-top:100px;
+  background-color: yellow;
+}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>clearfix 详解</h1>
+		<h3>日期：2015.12.4</h3>
+		<h3>参考网站：<a href="http://haoduoshipin.com/v/166">http://haoduoshipin.com/v/166</a></h3>
+		<h3>参考网站：<a href="http://www.bianguaishou.com/#float-clear">http://www.bianguaishou.com/#float-clear</a></h3>
+	</div>
+	<h1 align="center">float 问题</h1>
+	<div class="container clearfix">
+  	<div class="left">问题1</div>
+  	<div class="right">float后父级盒子高度缺失</div>
+	</div>
+	<h1 align="center">margin collapse问题</h1>
+	<div class="box clearfix">
+  		<div class="main">第二种问题，margin-top溢出，大盒子(无margin-top)会继承子元素的margin-top</div>
+	</div>
+	<div class="box1">
+  		<div class="main1">第三种问题父与子margin-top同时出现，只体现数值大的，此处体现了第二、三问题，未修正</div>
+	</div>
+	<div class="top1"></div>
+	<div class="bottom">问题四，上盒子有margin-bottom，下盒子有margin-top，只体现数值大的，消除方法，只设置一个</div>
+	
+	<div class="footer"><h3>版权所有 翻版必究</h3></div>
+</body>
+</html>

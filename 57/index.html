@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>处理有返回值的函数</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<script src="script.js"></script>
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main pre span{
+			color:#fff;
+		}
+		table{
+			border-collapse: collapse;
+			color: #000;
+		}
+		th,td{
+			padding:10px;
+			border:2px solid #666;
+			text-align: center;
+			width: 20%;
+		}
+		#free,.pickedBG{
+			background-color: #f66;
+		}
+		.winningBG{
+			background-image: url(../50/redFlash.gif);
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>BINGO卡片（5）</h1>
+		<h3>日期：2016.1.20</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../43/科技感.mp3" type="audio/mpeg" />
+		</audio>
+
+		<h3>Create a Bingo Card</h3>
+
+		<table>
+			<tr>
+				<th>B</th>
+				<th>I</th>
+				<th>N</th>
+				<th>G</th>
+				<th>O</th>
+			</tr>
+			<tr>
+				<td id="square0">&nbsp;</td>
+				<td id="square5">&nbsp;</td>
+				<td id="square10">&nbsp;</td>
+				<td id="square14">&nbsp;</td>
+				<td id="square19">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square1">&nbsp;</td>
+				<td id="square6">&nbsp;</td>
+				<td id="square11">&nbsp;</td>
+				<td id="square15">&nbsp;</td>
+				<td id="square20">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square2">&nbsp;</td>
+				<td id="square7">&nbsp;</td>
+				<td id="free">Free</td>
+				<td id="square16">&nbsp;</td>
+				<td id="square21">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square3">&nbsp;</td>
+				<td id="square8">&nbsp;</td>
+				<td id="square12">&nbsp;</td>
+				<td id="square17">&nbsp;</td>
+				<td id="square22">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square4">&nbsp;</td>
+				<td id="square9">&nbsp;</td>
+				<td id="square13">&nbsp;</td>
+				<td id="square18">&nbsp;</td>
+				<td id="square23">&nbsp;</td>
+			</tr>
+		</table>
+
+		<p><a href="index.html">Click here</a> to create a new card</p>
+
+		<p>函数可以返回一个值，然后脚本可以使用这个值。</p>
+
+<pre>
+function setSquare(thisSquare){
+	var currSquare = "square" + thisSquare;
+	
+	var colPlace = new Array(0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4);
+	var colBasic = colPlace [thisSquare] * 15;<span>
+	var newNum = colBasic + getNewNum() + 1;</span>
+
+	document.getElementById(currSquare).innerHTML = newNum;
+}
+
+function getNewNum() {<span>
+	return Math.floor(Math.random() * 15);</span>
+}
+</pre>
+	</div>
+
+	<div class="footer"><h3>Truly,would you not for less than that make the tour around the world?<br>说真的，难道人们真的不可能用更短的时间来环游地球一周吗？</h3></div>
+</body>
+</html>

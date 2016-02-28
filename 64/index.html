@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用do/while循环</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<script src="script.js"></script>
+
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin-bottom: 10px;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main pre span{
+			color:#fff;
+		}
+		.main p span{
+			color:red;
+		}
+		table{
+			border-collapse: collapse;
+			color: #000;
+		}
+		th,td{
+			padding:10px;
+			border:2px solid #666;
+			text-align: center;
+			width: 20%;
+		}
+		#free,.pickedBG{
+			background-color: #f66;
+		}
+		.winningBG{
+			background-image: url(../50/redFlash.gif);
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>BINGO卡片（7）</h1>
+		<h3>日期：2016.1.27</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../43/科技感.mp3" type="audio/mpeg" />
+		</audio>
+
+		<h3>Create a Bingo Card</h3>
+
+		<table>
+			<tr>
+				<th>B</th>
+				<th>I</th>
+				<th>N</th>
+				<th>G</th>
+				<th>O</th>
+			</tr>
+			<tr>
+				<td id="square0">&nbsp;</td>
+				<td id="square5">&nbsp;</td>
+				<td id="square10">&nbsp;</td>
+				<td id="square14">&nbsp;</td>
+				<td id="square19">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square1">&nbsp;</td>
+				<td id="square6">&nbsp;</td>
+				<td id="square11">&nbsp;</td>
+				<td id="square15">&nbsp;</td>
+				<td id="square20">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square2">&nbsp;</td>
+				<td id="square7">&nbsp;</td>
+				<td id="free">Free</td>
+				<td id="square16">&nbsp;</td>
+				<td id="square21">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square3">&nbsp;</td>
+				<td id="square8">&nbsp;</td>
+				<td id="square12">&nbsp;</td>
+				<td id="square17">&nbsp;</td>
+				<td id="square22">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="square4">&nbsp;</td>
+				<td id="square9">&nbsp;</td>
+				<td id="square13">&nbsp;</td>
+				<td id="square18">&nbsp;</td>
+				<td id="square23">&nbsp;</td>
+			</tr>
+		</table>
+
+		<p><a href="index.html">Click here</a> to create a new card</p>
+
+		<p>解决上节空白区域问题，使用do/while循环。</p>
+		<p>1.<span>var newNum;</span><br>在前面的示例中，在创建newNum变量时对它进行初始化。因为本次讲多次设置它，所以在进入循环之前创建它，这样只需创建一次。
+		</p>
+		<p>2.<span>do{  }</span><br>
+			这一行开始do代码块。关于这种循环必须记住的一点是：<span>do块中的代码至少会执行一次。</span>
+		</p>
+		<p>3.<span>while (usedNums[newNum]);</span><br>
+			whlie检查会使do代码块反复执行，直到检查结果为false为止。在这个示例中，我们检查usedNums[]数组中newNum位置上的值，从而检测newNum是否已经使用过了。如果这个数字已经用过了，控制就被传递回do块的开头，整个过程再次重复。最终，会找到一个没有使用过的数字。之后，会离开循环，将usedNums设置为true，并将newNum写到卡片上。
+		</p>
+<pre>
+window.onload = initAll;
+
+var usedNums = new Array(76);
+
+function initAll () {
+	if (document.getElementById){
+		for (var i = 0; i < 24 ; i++) {
+			setSquare(i);
+		}
+	}
+	else {
+		alert("Sorry,your browser doesn't support this script.")
+	}
+}
+
+function setSquare(thisSquare){
+	var currSquare = "square" + thisSquare;
+	
+	var colPlace = new Array(0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4);
+	var colBasic = colPlace [thisSquare] * 15;
+	<span>
+	var newNum;
+	do{
+		newNum = colBasic + getNewNum() + 1;
+	}
+	while (usedNums[newNum]);
+
+	usedNums[newNum] = true;
+	document.getElementById(currSquare).innerHTML = newNum;
+}</span>
+
+function getNewNum() {
+	return Math.floor(Math.random() * 15);
+}
+</pre>
+	</div>
+
+	<div class="footer"><h3>Action is the real measure of intelligence.<br>行动是智慧的真正衡量标准。</h3></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>figure 和 figcaption 的用法</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 70%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+		}
+		figure{
+			width: 100px;
+			height: 100px;
+			margin: 10px auto;
+			background-color: deeppink;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>figure 和 caption 的用法</h1>
+		<h3>日期：2015.12.22</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h2>&lt;figure&gt;标签是 HTML 5 中的新标签。</h2>
+		<h2>&lt;figcaption&gt;元素为 figure 添加标题（caption）。</h2>
+		<h2>&lt;figure&gt;注意一般figure放置图片，对应的&lt;figcaption&gt;放置其标题。</h2>
+		<h2>此处有个小技巧，因为figure是一个独立的标签，在代码中如何围棋添加左右尖括号，同时显示在网页中，左尖括号用“&lt;”，右尖括号"&gt;"，额，还是查看源码吧。</h2>
+		<figure>
+			<figcaption>这是标题</figcaption>
+		</figure>
+	</div>
+	<div class="footer"><h3>The harder you fall,the highter you bounce.<br>跌的越重，反弹的就越高。</h3></div>
+</body>
+</html>

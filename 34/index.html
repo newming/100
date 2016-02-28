@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pre下的overflow</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main pre{
+			background-color: #333;
+			padding: 10px;
+			overflow: auto;
+		}
+		.main table{
+			border:1px solid blue;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>pre下的overflow</h1>
+		<h3>日期：2015.12.28</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<p>pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。</p>
+		<p>&lt;pre&gt; 标签的一个常见应用就是用来表示计算机的源代码。(即源代码)</p>
+<pre>
+	for i = 1 to 10
+     		print i
+	next i
+</pre>
+		<p>那么问题来了，当我们在输入了一句很长的代码时，例如下边的这条：</p>
+<pre>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+</pre>
+	<p>当我们放在窄屏时，&lt;pre&gt; 标签不会自动换行，而其他元素因为宽度设置的百分比或者像素大小，会自动换行，这样就会在屏幕右边挤出来空白部分，影响布局，所以是个很不好的效果，同时&lt;pre&gt; 标签会自动对内部文字的字体进行设置，结果为 font-family: monospace; 当然了可以对其进行修改，不过这种字体不错，比较适合显示代码。</p>
+	<p>下面来谈一下解决第一个不换行的问题。（尤其在手机上）</p>
+	<p>暂时的解决方法是利用overflow:scroll;</p>
+	<p>下面具体的谈一下overflow的属性吧。</p>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>值</th>
+			<th>描述</th>
+		</tr>
+		<tr>
+			<td>visible</td>
+			<td>默认值。内容不会被修剪，会呈现在元素框之外。</td>
+		</tr>
+		<tr>
+			<td>hidden</td>
+			<td>内容会被修剪，并且其余内容是不可见的。</td>
+		</tr>
+		<tr>
+			<td>scroll</td>
+			<td>内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</td>
+		</tr>
+		<tr>
+			<td>auto</td>
+			<td>如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</td>
+		</tr>
+		<tr>
+			<td>inherit</td>
+			<td>规定应该从父元素继承 overflow 属性的值。</td>
+		</tr>
+	</table>
+	<p>以上就是overflow的各个属性了，具体用哪个得自己看，我上边的用的是auto；还未进行测试。</p>
+	</div>
+	<div class="footer"><h3>It is impossible to win the great prizes in life without running risks.<br>不冒险，怎么能赢得人生中的种种精彩？</h3></div>
+</body>
+</html>

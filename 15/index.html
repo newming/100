@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform 转换样式</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		body{
+			background-color: #000;
+		}
+		.main{
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
+		}
+		.main a {
+			text-decoration: none;
+			color:#eee;
+		}
+		table{
+			margin:0 auto;
+		}
+		th{
+			border:1px solid teal;
+			background-color: #222;
+		}
+		td{
+			border:1px solid teal;
+			line-height: 32px;
+			font-family: "黑体";
+		}
+		.main .spec td{
+			color:red;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			position: absolute;
+			top:300px;
+			left:50px;
+			text-align: center;
+			line-height: 50px;
+			transform:translate(100px,100px);
+			transition:all 3s;
+		}
+		.box:hover{
+			transform:translate(500px,200px);
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top:300px;
+			left:1100px;
+			text-align: center;
+			line-height: 100px;
+			transform:scale(1,1);
+			transition:all 3s;
+		}
+		.box1:hover{
+			transform:scale(2,3);
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			position: absolute;
+			top:400px;
+			left:50px;
+			text-align: center;
+			line-height: 100px;
+			transform:translate(0,0) rotate(0deg);
+			transition:all 5s;
+		}
+		.box2:hover{
+			transform:translate(950px,200px) rotate(360deg);
+	/*		top:200px;
+			left:1000px;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>transform 转换样式</h1>
+		<h3>日期：2015.12.9</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../12/金贵晟虹之间.mp3" type="audio/mpeg" />
+		</audio>
+		<h2>参考手册：<a href="http://www.w3school.com.cn/cssref/pr_transform.asp">http://www.w3school.com.cn/cssref/pr_transform.asp</a></h2>
+		<table class="dataintable">
+			<tr>
+				<th>值</th>
+				<th>描述</th>
+			</tr>
+
+			<tr>
+				<td>none</td>
+				<td>定义不进行转换。</td>
+			</tr>
+
+			<tr>
+				<td>matrix(<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>)</td>
+				<td>定义 2D 转换，使用六个值的矩阵。</td>
+			</tr>
+
+			<tr>
+				<td>matrix3d(<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>,<i>n</i>)</td>
+				<td>定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+			</tr>
+			<tr class="spec">
+				<td>translate(<i>x</i>,<i>y</i>)</td>
+				<td>定义 2D 转换。(位移)</td>
+			</tr>
+			<tr>
+				<td>translate3d(<i>x</i>,<i>y</i>,<i>z</i>)</td>
+				<td>定义 3D 转换。</td>
+			</tr>
+			<tr>
+				<td>translateX(<i>x</i>)</td>
+				<td>定义转换，只是用 X 轴的值。</td>
+			</tr>
+			<tr>
+				<td>translateY(<i>y</i>)</td>
+				<td>定义转换，只是用 Y 轴的值。</td>
+			</tr>
+
+			<tr>
+				<td>translateZ(<i>z</i>)</td>
+				<td>定义 3D 转换，只是用 Z 轴的值。</td>
+			</tr>
+			<tr class="spec">
+				<td>scale(<i>x</i>,<i>y</i>)</td>
+				<td>定义 2D 缩放转换。</td>
+			</tr>
+			<tr>
+				<td>scale3d(<i>x</i>,<i>y</i>,<i>z</i>)</td>
+				<td>定义 3D 缩放转换。</td>
+			</tr>
+			<tr>
+				<td>scaleX(<i>x</i>)</td>
+				<td>通过设置 X 轴的值来定义缩放转换。</td>
+			</tr>
+			<tr>
+				<td>scaleY(<i>y</i>)</td>
+				<td>通过设置 Y 轴的值来定义缩放转换。</td>
+			</tr>
+			<tr>
+				<td>scaleZ(<i>z</i>)</td>
+				<td>通过设置 Z 轴的值来定义 3D 缩放转换。</td>
+			</tr>
+			<tr class="spec">
+				<td>rotate(<i>angle</i>)</td>
+				<td>定义 2D 旋转，在参数中规定角度。</td>
+			</tr>
+			<tr>
+				<td>rotate3d(<i>x</i>,<i>y</i>,<i>z</i>,<i>angle</i>)</td>
+				<td>定义 3D 旋转。</td>
+			</tr>
+			<tr>
+				<td>rotateX(<i>angle</i>)</td>
+				<td>定义沿着 X 轴的 3D 旋转。</td>
+			</tr>
+			<tr>
+				<td>rotateY(<i>angle</i>)</td>
+				<td>定义沿着 Y 轴的 3D 旋转。</td>
+			</tr>
+			<tr>
+				<td>rotateZ(<i>angle</i>)</td>
+				<td>定义沿着 Z 轴的 3D 旋转。</td>
+			</tr>
+			<tr class="spec">
+				<td>skew(<i>x-angle</i>,<i>y-angle</i>)</td>
+				<td>定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+			</tr>
+			<tr>
+				<td>skewX(<i>angle</i>)</td>
+				<td>定义沿着 X 轴的 2D 倾斜转换。</td>
+			</tr>
+			<tr>
+				<td>skewY(<i>angle</i>)</td>
+				<td>定义沿着 Y 轴的 2D 倾斜转换。</td>
+			</tr>
+			<tr>
+				<td>perspective(<i>n</i>)</td>
+				<td>为 3D 转换元素定义透视视图。</td>
+			</tr>
+		</table>
+		<div class="box">我会动<br>translate</div>
+		<div class="box1">scale</div>
+		<div class="box2">rotate</div>
+		<h1>当有两个transform属性时，不需要多次些transform<br>只需将两个属性之间加空格<br>如：transform:translats(0,0) rotate(180deg)<br>还有一个transform-origin:0 0; 属性<br>定义图像的中心点，注意写法</h1>
+	</div>
+	<div class="footer"><h3>版权所有 翻版必究</h3></div>
+</body>
+</html>

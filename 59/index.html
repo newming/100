@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>fullPage.js — iPhone 5C演示_dowebok</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+
+<link rel="stylesheet" href="css/index.css">
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.fn.fullpage({
+			'verticalCentered': false,
+			'anchors': ['page1', 'page2', 'page3', 'page4'],
+			'css3': true,
+			'slidesColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
+			'navigation': true,
+			'navigationPosition': 'right',
+			'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+			
+			'afterLoad': function(anchorLink, index){
+				if(index == 2){
+					$('#iphone3, #iphone2, #iphone4').addClass('active');
+				}
+				$('#infoMenu').toggleClass('whiteLinks', index ==4);
+				
+			},
+			
+			'onLeave': function(index, direction){
+				if (index == 3 && direction == 'down'){
+					$('.section').eq(index -1).removeClass('moveDown').addClass('moveUp');
+				}
+				else if(index == 3 && direction == 'up'){
+					$('.section').eq(index -1).removeClass('moveUp').addClass('moveDown');
+				}
+				
+				$('#staticImg').toggleClass('active', (index == 2 && direction == 'down' ) || (index == 4 && direction == 'up'));
+				$('#staticImg').toggleClass('moveDown', index == 3 && direction == 'down');	
+			},
+			
+			afterRender: function(){
+				$('#infoMenu').appendTo('body');
+				
+				$('#githubLink, .twitter-share-button').appendTo('body');
+			}
+
+		});
+	});
+</script>
+</head>
+
+<body>
+
+<div id="staticImg">
+	<div class="imgsContainer">
+		<img src="images/iphone-green.png" alt="iphone" id="iphone-green" />
+	</div>
+</div>
+
+<div class="section " id="section0">
+	<h1>fullPage.js — iPhone 5C演示</h1>
+	<img src="images/iphone1.jpg" alt="iphone" />
+</div>
+
+<div class="section" id="section1">
+	<div class="wrap">
+		<div class="imgsContainer">
+			<img src="images/iphone2.png" alt="iphone" id="iphone2" />
+			<img src="images/iphone3.png" alt="iphone" id="iphone3" />
+			<img src="images/iphone4.png" alt="iphone" id="iphone4" />
+		</div>
+		
+		<div class="box">
+			<h2>A powerful plugin</h2>
+			 <strong>fullPage.js</strong>  callbacks allow you to create amazing dynamic sites with a bit of imagination. This example tries to reproduce the Apple iPhone-5c website animations as an example of what fullPage.js is capable of.
+		</div>
+	</div>
+</div>
+
+<div class="section moveDown" id="section2">
+	<div class="wrap">
+		<div class="imgsContainer">
+			<img src="images/iphone-yellow.png" alt="iphone" id="iphone-yellow" />
+			<img src="images/iphone-red.png" alt="iphone" id="iphone-red" />
+			<img src="images/iphone-blue.png" alt="iphone" id="iphone-blue" />
+		</div>
+		
+		<div class="box">
+			<h2>Amazing stuff</h2>
+			Combining <strong>fullPage.js</strong> with your own CSS styles and animations, you will be able to create something remarkable. 
+		</div>
+	</div>
+</div>
+<div class="section moveDown" id="section3">
+	<div class="wrap">
+		<div class="box">
+			<h2>Just a demo</h2>
+			This is, of course, just a demo. I didn't want to spend much time on it.
+			Don't expect it to work perfectly in all kind of screens.
+			It has been designed to work on 1180px width or over on modern browsers with CSS3.
+		</div>
+	</div>
+	<div class="imgsContainer">
+		<img src="images/iphone-two.png" alt="iphone" id="iphone-two" />
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a> -->
+
+</body>
+</html>

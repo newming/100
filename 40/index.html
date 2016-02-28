@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5 新增表单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.8;
+			max-width: 860px;
+		}
+		.main ul li{
+			list-style-position: inside;
+			margin-left: 2rem;
+		}
+		.main form{
+			margin-left: 2rem;
+		}
+		.main pre{
+			overflow: auto;
+			background-color: #333;
+		}
+		.main .num{
+			width: 20%;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>H5 新增表单</h1>
+		<h3>日期：2016.1.3</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop">
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../25/Luv Letter (情书).mp3" type="audio/mpeg" />
+		</audio>
+		<h3>HTML5 新的 Input 类型</h3>
+		<p><a href="http://www.w3school.com.cn/html5/html_5_form_input_types.asp">参考网站</a></p>
+		<p>HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。</p>
+		<p>本次全面介绍这些新的输入类型：</p>
+		<ul>
+			<li>email</li>
+			<li>url</li>
+			<li>number</li>
+			<li>range</li>
+			<li>Date pickers (date, month, week, time, datetime, datetime-local)</li>
+			<li>search</li>
+			<li>color</li>
+		</ul>
+		<h4>Input 类型 - email</h4>
+		<p>email 类型用于应该包含 e-mail 地址的输入域。</p>
+		<p>在提交表单时，会自动验证 email 域的值。</p>
+		<h4>实例：</h4>
+<pre>
+E-mail: &lt;input type="email" name="user_email" /&gt;
+</pre>
+		<form method="get">
+			E-mail: <input type="email" name="user_email" /><br />
+			<input type="submit" />
+		</form>
+
+		<h4>Input 类型 - url</h4>
+		<p>url 类型用于应该包含 URL 地址的输入域。</p>
+		<p>在提交表单时，会自动验证 url 域的值。</p>
+		<h4>实例：</h4>
+<pre>
+Homepage: &lt;input type="url" name="user_url" /&gt;
+</pre>
+		<form method="get">
+			Homepage: <input type="url" name="user_url" /><br />
+			<input type="submit" />
+		</form>
+
+		<h4>Input 类型 - number</h4>
+		<p>number 类型用于应该包含数值的输入域。</p>
+		<p>您还能够设定对所接受的数字的限定：</p>
+		<h4>实例：</h4>
+<pre>
+Points: &lt;input type="number" name="points" min="1" max="10" /&gt;
+</pre>
+		<form method="get">
+			Points: <input type="number" name="points" min="1" max="10" class="num"/>
+			<input type="submit" />
+		</form>
+		<p>请使用下面的属性来规定对数字类型的限定：</p>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>属性</th>
+				<th>值</th>
+				<th>描述</th>
+			</tr>
+
+			<tr>
+				<td>max</td>
+				<td><i>number</i></td>
+				<td>规定允许的最大值</td>
+			</tr>
+
+			<tr>
+				<td>min</td>
+				<td><i>number</i></td>
+				<td>规定允许的最小值</td>
+			</tr>
+
+			<tr>
+				<td>step</td>
+				<td><i>number</i></td>
+				<td>规定合法的数字间隔（如果 step=&quot;3&quot;，则合法的数是 -3,0,3,6 等）</td>
+			</tr>
+
+			<tr>
+				<td>value</td>
+				<td><i>number</i></td>
+				<td>规定默认值</td>
+			</tr>
+		</table>
+		<h4>Input 类型 - range</h4>
+		<p>range 类型用于应该包含一定范围内数字值的输入域</p>
+		<p>range 类型显示为滑动条。</p>
+		<p>您还能够设定对所接受的数字的限定：</p>
+		<h4>实例：</h4>
+<pre>
+&lt;input type="range" name="points" min="1" max="10" /&gt;
+</pre>
+			<form method="get">
+			Points: <input type="range" name="points" min="1" max="10" />
+			<input type="submit" />
+			</form>
+		<p>请使用下面的属性来规定对数字类型的限定：</p>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>属性</th>
+				<th>值</th>
+				<th>描述</th>
+			</tr>
+
+			<tr>
+				<td>max</td>
+				<td><i>number</i></td>
+				<td>规定允许的最大值</td>
+			</tr>
+
+			<tr>
+				<td>min</td>
+				<td><i>number</i></td>
+				<td>规定允许的最小值</td>
+			</tr>
+
+			<tr>
+				<td>step</td>
+				<td><i>number</i></td>
+				<td>规定合法的数字间隔（如果 step=&quot;3&quot;，则合法的数是 -3,0,3,6 等）</td>
+			</tr>
+
+			<tr>
+				<td>value</td>
+				<td><i>number</i></td>
+				<td>规定默认值</td>
+			</tr>
+		</table>
+	</div>
+	<div class="footer"><h3>Love is that condition in which the happiness of another person is essential to your own.<br>爱是当另一个人的快乐能影响你自己的快乐。</h3></div>
+</body>
+</html>

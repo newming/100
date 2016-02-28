@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	* {
+  		margin: 0;
+  		overflow: hidden;
+  		background-color: #000;}
+	canvas {
+  		display: block;
+  		margin: 0 auto;
+  		margin: calc(50vh - 250px) auto;
+		}
+	h1{
+		color:#fff;
+		text-align: center;
+		padding-top: 20px;
+		}
+	h3{
+		color:#fff;
+		text-align:center;
+		padding-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>超炫特效，希望未来的我可以达到！</h1>
+	<h3>2015.11.29</>
+	<canvas id='c'>Far from beeing perfect a non-aggregated snowflake often exhibits six-fold radial symmetry.</canvas>
+</body>
+</html>
+<script>
+	var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+var cw = c.width = 500;
+var ch = c.height = 500;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "hsla(210,90%,50%,.5)";
+ctx.shadowBlur = 15;
+ctx.shadowOffsetX = 1;
+ctx.shadowOffsetY = 1;
+ctx.shadowColor = "hsla(210,90%,50%,1)";
+
+var I = 25;
+var a = 6 * I;
+var b = 1 * I;
+
+var h = 0;
+var rotation = 0;
+var step = 29;
+var initialValue = 75;
+
+function Draw() {
+  rotation += .05
+  initialValue = 10 + 75 * (Math.cos(rotation * .001 * rad));
+  h = 20 + 80 * (Math.cos(rotation * rad))
+  var I = 25;
+  var a = 6 * I;
+  var b = 1 * I;
+  step = initialValue + 150 * (Math.sin(.01 * rotation * rad));
+
+  ctx.clearRect(0, 0, cw, ch);
+  ctx.beginPath();
+  for (var T = 0; T < 360 * b; T += step) {
+    var t = T * rad;
+    var x = cx + (a - b) * Math.cos(t) + h * Math.cos(rotation + (a - b) / b * t);
+    var y = cy + (a - b) * Math.sin(t) - h * Math.sin(rotation + (a - b) / b * t);
+    ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+  ctx.globalCompositeOperation = "lighter";
+  requestId = window.requestAnimationFrame(Draw);
+}
+requestId = window.requestAnimationFrame(Draw);
+</script>

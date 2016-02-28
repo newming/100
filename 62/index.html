@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试visibility</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<script src="../script/jQuery.js"></script>
+	<link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+	
+	<div class="cover"></div><!-- 黑色的大盒子 -->
+	<div class="button">click</div><!-- 侧边导航栏 -->
+	
+	<div class="menu">
+			<p>Modern Demo</p>
+	</div>
+	
+	<div class="nav-list">
+		<ul>
+			<li class="list no1"><a href="#">首页</a></li>
+			<li class="list no2"><a href="#">登录</a></li>
+			<li class="list no3"><a href="#">注册</a></li>
+		</ul>
+	</div>
+
+	<div class="top"><h1>测试visibility</h1>
+		<h3>日期：2016.1.25</h3>
+	</div>
+	<div class="main">
+		<p>总结下今天的实验。</p>
+		<p>第一：关于整个色块的过渡尝试，通过visibility属性配合opacity，可以做到过渡，并且在隐藏起来后，不影响下边的内容。</p>
+		<p>第二：对于汉堡包按钮弹出菜单栏的时间做了调整，即有了不同的延迟，方法呢比较无脑繁琐，因为现在的我还不会js语法，只会click事件，通过添加删除class名做出动作。为了达到效果呢，添加了不少的class名称。</p>
+	</div>
+	<div class="footer"><h3>Protect your innocence.Our innocence allows us to do what the practical mind prohibits.<br>保护你的纯真，它让我们有勇气去做实际心态所不允许的事。</h3></div>
+	<script>
+		$('.button').click(function() {
+			$('.menu').removeClass('slow');
+			$('.menu').addClass('move');
+			$('.list').addClass('move');
+			$('.cover').addClass('show');
+		});
+		$('.cover').click(function(){
+			$('.menu').addClass('slow');
+			$('.menu').removeClass('move');
+			$('.list').removeClass('move');
+			$('.cover').removeClass('show');
+		});
+		$('.menu').click(function(){
+			$('.menu').addClass('slow');
+			$('.menu').removeClass('move');
+			$('.list').removeClass('move');
+			$('.cover').removeClass('show');
+		});
+	</script>
+</body>
+</html>

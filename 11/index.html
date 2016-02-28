@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通配符新功能</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.clearfix:before,
+		.clearfix:after {
+    		content: " ";
+    		display: table;
+		}
+
+		.clearfix:after {
+    	clear: both;
+		}
+		.main{background-color: #aaa;width: 60%;margin: 0 auto;text-align: center;line-height: 30px;color: #fff;}
+		.box1{
+			box-sizing:border-box;
+			width: 100px;
+			height: 100px;
+			float:left;
+			background-color: teal;
+			border:5px solid #ffff00;
+			padding: 30px;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			float:right;
+			background-color: teal;
+			border:5px solid #ffff00;
+			padding: 30px;
+		}
+		pre{
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>通配符新功能</h1>
+		<h3>日期：2015.12.5</h3>
+	</div>
+	<div class="main clearfix">
+		<h3 align="center">这个问题很烦，往往在引用padding和border时，需要计算盒模型，现在好了，一句通用代码全部搞定。</h3>
+		<div class="box1">没撑大</div>
+		<div class="box2">撑大了</div>
+		<p>好了，完整的总结下。<br>通配符写在css最前。具体如下：</p>
+<pre>
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+</pre>
+<p>clearfix 的具体写法</p>
+<pre>
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+	.clearfix:after {
+    clear: both;
+}
+
+</pre>
+	</div>
+	<div class="footer"><h3>版权所有 翻版必究</h3></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>responsive design</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 70%;
+			color:#808080;
+			margin: 0 auto;
+		}
+		.main  h1{
+			margin-top:20px;
+			margin-bottom: 20px;
+		}
+		.main p{
+			line-height: 1.8;
+			margin-bottom: 12px;
+		}
+		.box {
+			width: 100%;
+			margin: 0 auto;
+		}
+		.box img {
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 20px auto;
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>弹性布局和弹性媒介</h1>
+		<h3>日期：2015.12.13</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../12/金贵晟虹之间.mp3" type="audio/mpeg" />
+		</audio>
+		<h2 align="center">响应式网站设计主要包括三部分：弹性布局、媒体查询和弹性媒介。</h2>
+		<h2 align="center">参考网站：<a href="http://book.haoduoshipin.com/go-responsive">http://book.haoduoshipin.com/go-responsive</a></h2>
+		<h1>弹性布局</h1><p>所谓的弹性布局，说的是在创建网站的时候，采用流体网格布局方式，动态地调整网站布局宽度以此来适应各种设备屏幕大小。</p><p>弹性布局不使用固定的测量单位，比如像素或者英寸。原因显而易见，视窗（ viewport ）的高度和宽度在不同设备之间是不断变化的，那么弹性网站布局为了适应这种变化，所以就不可能明确的指定网站内容的宽度和高度，只能使用相对长度单位。</p><p>也就是我们常用的百分数。</p>
+		<h1>弹性媒介</h1><p>网站上的图片、视频、Flash 等就是所谓的媒介。随着浏览器窗口大小的改变，网站上媒介的布局不一定变得很合适，有时候它们会超出其容器的界限，当浏览器窗口变得比较小的情况下，这时页面看起来会很糟糕。因此图片、视频和其它媒介类型应该具备可伸缩性，能根据浏览器窗口的大小，自动调整自身尺寸，保证页面布局整齐一致。</p><p>让图片等媒介具有可伸缩性，一个简单有效的方法，就是把它的 max-width 属性值设置为 100%，意思是说它的最大宽度就是其容器的宽度。这样就能确保当浏览器窗口变小的时候，则网站上的媒介会依据其容器的大小而缩小尺寸，始终包裹在容器内。</p>
+		<h2 align="center">下面是一个例子，当显示器大小发生变化时图片自适应</h2>
+		<div class="box"><img src="example.jpg" alt=""></div>
+		<h1>相对长度单位</h1>
+		<p>自从 CSS3 问世之后，相对长度家族成员也壮大起来，除了已有的 % 和 em 单位之外，新加入了 rem 单位，还增加了一组相对视窗长度单位如 vw、vh、vmin 和 vmax。目前浏览器对这些新加入成员的支持还不太好，所以它们还没有普遍使用起来。下面简单介绍一下 em、rem 还有百分比。</p>
+		<p>em 是相对于其所在元素的字体而言的。若使用 em 单位的元素定义了 font-size 为 12px，则此时 1em == 12px，那 2em == 24px；若没有，则找其父元素的字体大小，依次类推直到 html 元素；若整个页面没有定义字体大小，而是使用浏览器默认字体大小 16px，则 1em == 16px。</p><p>再稍微说一下 rem（ root em 的简写 ），它与 em 相似，但 rem 仅仅是相对于 html 根元素的 font-size 而言的。这样一旦设置了一个基本字体大小，定义其它长度就容易了，比 em 使用起来简单。不足之处就是，牵一发而动全身。</p>
+	</div>
+	<div class="footer"><h3>Done is better than perfect.<br>期望完美往往抵不过完成一件事。</h3></div>
+</body>
+</html>

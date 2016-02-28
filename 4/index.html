@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+	<style>
+	body{width: 100%text-align: center;}
+	.content{width: 100%;text-align: center;line-height: 36px;}
+	.box{width: 200px;height: 200px;background-color: #aaa;transition:all 2s ease 1s;margin:10px auto;}
+	.box:hover{background-color: #00ffff;}
+	.box1{width: 200px;height: 200px;background-color: #aaa;transition:all 2s ease 1s;margin:0 auto;position: relative;}
+	.box2{width: 30px;height: 30px;background-color: #ff0000;position: absolute;transition:all 2s;top:0px;left:0px;}
+	.box1:hover .box2{left: 100px;top:100px;border-radius: 50%}
+	.box3{width: 200px;height: 200px;background-color: #aaa;transition:all 2s ease 1s;margin:10px auto;}
+	.box4{width: 50px;height: 50px;background-color: #ff0000;position: absolute;transition:all 2s;top:200px;left:200px;box-shadow:-5px -5px 5px blue;}
+	.box3:hover .box4{left: 400px;top:400px;border-radius: 50% ;box-shadow:5px 5px 5px green;}
+	/*父级 transition 样式的使用，
+	.box1:hover .box2 
+	完整写法“transition: 过渡属性 持续时间 效果函数 过渡延时;”例子 transition: background-color 2s ease 1s;*/
+	</style>
+</head>
+<body>
+	<div class="content"><h1>transition 样式的使用</h1><h3>日期  2015.11.28</h3>
+		<h3>参考网站<a href="http://haoduoshipin.com/v/177">http://haoduoshipin.com/v/177</a><br><a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function">w3官网函数介绍http://www.w3.org/TR/css3-transitions/#transition-timing-function</a><br><a href="http://www.w3.org/TR/css3-transitions/#animatable-css">可应用的样式http://www.w3.org/TR/css3-transitions/#animatable-css</a></h3></div>
+	<div class="box"></div>
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+	<div class="box3">
+		<div class="box4"></div>
+	</div>
+</body>
+</html>

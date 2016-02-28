@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类选择器汇总</title>
+	<link rel="stylesheet" href="../style/style.css">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<div class="top"><h1>伪类选择器汇总</h1>
+		<h3>日期：2015.12.14</h3>
+	</div>
+	<div class="main">
+		<audio controls="controls" autoplay="autoplay" hidden="hidden" loop="loop"> 
+			<!-- <source src="你要播放的音乐.ogg" type="audio/ogg" /> -->
+			<source src="../12/金贵晟虹之间.mp3" type="audio/mpeg" />
+		</audio>
+		<h2 align="center">参考网站：<a href="http://edu.cnzz.cn/201401/94267679.shtml">http://edu.cnzz.cn/201401/94267679.shtml</a> </h2>
+		<h4>第一类：动态伪类。</h4>
+		<p>动态伪类，因为这些伪类并不存在于HTML中,而只有当用户和网站交互的时候才能体现出来，动态伪类包含两种，第一种是我们在链接中常看到的锚点伪类，如":link",":visited";另外一种被称作用户行为伪类，如“:hover”,":active"和":focus"。先来看最常见的锚点伪类</p>
+		<div class="code"><p>.demo a:link {color:gray;}/*链接没有被访问时前景色为灰色*/</p>
+			<p>.demo a:visited{color:yellow;}/*链接被访问过后前景色为黄色*/</p>
+			<p>.demo a:hover{color:green;}/*鼠标悬浮在链接上时前景色为绿色*/</p>
+			<p>.demo a:active{color:blue;}/*鼠标点中激活链接那一下前景色为蓝色*/</p>
+		</div>
+		<p>对于这四个锚点伪类的设置，有一点需要特别注意，那就是他们的先后顺序，要让他们遵守一个爱恨原则LoVe/HAte,也就是<span>Link--visited--hover--active</span>。如果你把顺序搞错了会给你带来意想不到的错误，大家对于这个应该很熟悉的，如果是初学的朋友，可以私下练习一下。其中:hover和:active又同时被列入到用户行为伪类中，他们所表达的意思是：</p>
+		<p>1. <span>:hover</span>用于当用户把鼠标移动到元素上面时的效果；</p>
+		<p>2. <span>:active</span>用于用户点击元素那一下的效果（正发生在点的那一下，松开鼠标左键此动作也就完成了）</p>
+		<p>3. <span>:focus</span>用于元素成为焦点，这个经常用在表单元素上。</p>
+		<h4>第二类:UI元素状态伪类</h4>
+		<p>我们把<span>:enabled</span>,<span>:disabled</span>,<span>:checked</span>伪类称为UI元素状态伪类，这些主要是针对于HTML中的Form元素操作，最常见的比如我们"type="text"有<span>enable</span>和<span>disabled</span>两种状态，前者为可写状态后者为不可状态；另外"type="radio"和"type="checkbox""有"<span>checked</span>"和"<span>unchecked</span>"两种状态。来看两个实例，比如说你想将"disabled"的文本框与别的文本框区别出来，你就可以这样应用</p>
+		<div class="code"><p>input[type="text"]:disabled {border:1px solid #999;background-color: #fefefe;}	</p></div>
+		<h4>第三类：CSS3的:nth选择器</h4>
+		<p>这节内容才是关键，也是CSS3选择器最新部分，有人也称这种选择器为CSS3结构类，下面我们通过实际的应用来具体了解他们的使用和区别，首先列出他具有的选择方法：</p>
+		<ol>
+			<li><span>:fist-child</span> 选择某个元素的第一个子元素；</li>
+			<li><span>:last-child</span> 选择某个元素的最后一个子元素；</li>
+			<li><span>:nth-child()</span> 选择某个元素的一个或多个特定的子元素；</li>
+			<li><span>:nth-last-child()</span> 选择某个元素的一个或多个特定的子元素，从这个元素的最后一个子元素开始算；</li>
+			<li><span>:nth-of-type()</span> 选择指定的元素；</li>
+			<li><span>:nth-last-of-type()</span> 选择指定的元素，从元素的最后一个开始计算；</li>
+			<li><span>:first-of-type</span> 选择一个上级元素下的第一个同类子元素；</li>
+			<li><span>:last-of-type</span> 选择一个上级元素的最后一个同类子元素；</li>
+			<li><span>:only-child</span> 选择的元素是它的父元素的唯一一个了元素；</li>
+			<li><span>:only-of-type</span> 选择一个元素是它的上级元素的唯一一个相同类型的子元素；</li>
+			<li><span>:empty</span>选择的元素里面没有任何内容。</li>
+		</ol>
+		<h4>第四类：否定选择器（:not）</h4>
+		<p>否定选择器和jq中的:not选择器一模一样，就拿form中的元素来说明这个选择器的用法，比如你想对form中所有input加边框，但又不想submit也起变化，此时就可以使用:not为实现</p>
+		<div class="code"><p>input:not([type="submit"]) {border: 1px solid red;}</p></div>
+		<span><p>否定选择器 :not()，可以让你定位不匹配该选择器的元素。IE6-8浏览器不支持:not()选择器</p></span>
+		<h4>第五类：伪元素</h4>
+		<p>CSS中的伪元素大家以前看过：:first-line,:first-letter,:before,:after;那么在CSS3中，他对伪元素进行了一定的调整，在以前的基础上增加了一个“：”也就是现在变成了“::first-letter,::first-line,::before,::after”另外他还增加了一个“::selection”,两个“：：”和一个“：”css3中主要用来区分伪类和伪元素，到目前来说，这两种方式都是被接受的，也就是说不管使用哪种写法所起的作用都是一样的，只是一个书写格式不同而以。</p>
+		<p>那么我们简单了解一下他们的作用</p>
+		<p><span>::first-line </span>选择元素的第一行，比如说改变每个段落的第一行文本的样式，我们就可以使用这个</p>
+		<div class="code"><p>p::first-line {font-weight:bold;}</p></div>
+		<p><span>::first-letter </span>选择文本块的第一个字母，除非在同一行里面包含一些其它元素，不过这个主要运用于段落排版上多，比如说首字下沉</p>
+		<div class="code"><p>p::first-letter {font-size: 56px;float:left;margin-right:3px;}</p></div>
+		<p><span>::before和::after </span>这两个主要用来给元素的前面或后面插入内容，这两个常用"content"配合使用，见过最多的就是清除浮动</p>
+		<div class="code"><p>.clearfix:before,.clearfix:after {</p>
+		<p>　　content: ".";</p><p>　　display: block;</p><p>　　height: 0;</p><p>　　visibility: hidden;</p><p>}</p><p>.clearfix:after {</p>
+		<p>　　clear: both;</p><p>}</p><p>.clearfix {</p><p>　　zoom: 1;</p><p>}</p>
+		<p><span>::selection </span>用来改变浏览网页选中文的默认效果。</p>
+		</div>
+		<h2 align="center">接下来会重点列举应用第三类；<span>nth选择器</span></h2>
+	</div>
+	<div class="footer"><h3>Govern your thoughts when alone,and your tongue when in company.<br>闲谈勿论人非，静坐常思己过。</h3></div>
+</body>
+</html>
+

@@ -1,0 +1,253 @@
+/*common   css*/
+*{
+	margin:0;
+	padding: 0;
+	box-sizing:border-box;
+}
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+body{
+	font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+	-webkit-overflow-scrolling:touch; /*流畅滚动手机端*/
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+ul{
+	list-style: none;
+}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+
+/*section css*/
+.nav{
+	height: 64px;
+	background-color: teal;
+	color:#fff;
+}
+.nav .button{
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	line-height: 2rem;
+	font-size: 1.5rem;
+	position: absolute;
+	top:16px;
+	left: 16px;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: rgba(126,140,223,0);
+	-webkit-transition:background-color 0.8s;
+	transition:background-color 0.8s;
+}
+.nav .button:hover{
+	background-color: rgba(126,140,223,0.5);
+}
+.hei{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;	
+	display: none;
+	background-color:rgba(0,0,0,0);
+	/*transition:all 0.3s 2s;*/
+}
+.hei.alpha{
+	display:block;
+	background-color:rgba(0,0,0,0.4);
+	/*opacity: 0.4;*/
+}
+.menu{
+	position: fixed;
+	top:0;
+	left: 0;
+	bottom: 0;
+	width: 60%;
+	background-color: white;
+	text-align: center;
+	padding-top: 80px;
+	-webkit-transition:all 0.3s .2s;
+	transition: all 0.3s .2s;
+	-webkit-transform:translateX(-100%);
+	        transform:translateX(-100%);
+}
+.menu.move{
+	-webkit-transform:translateX(0%);
+	        transform:translateX(0%);
+}
+.menu li{
+	list-style: none;
+	line-height: 2.5;
+}
+.menu li a{
+	text-decoration: none;
+	color:#808080;
+	display: block;
+	width: 100%;
+	font-size: 1.2em;
+}
+.menu li a:hover{
+	background-color: lightblue;
+}
+.menu p{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color:#fff;
+	font-size: 1.2rem;
+	line-height: 64px;
+	background-color: teal;
+	width: 100%;
+}
+.header{
+	display: none;
+	height: 64px;
+	padding-right: 50px;
+}
+.header li{
+	display: inline;
+	list-style: none;
+	float: right;
+}
+.header li a{
+	text-decoration: none;
+	color:#808080;
+	display: block;
+	width: 64px;
+	height: 64px;
+	line-height: 64px;
+	text-align: center;
+}
+.header li a:hover{
+	border-bottom: 2px solid teal;
+}
+@media (min-width: 764px){
+	.nav{
+		display: none;
+	}
+	.header{
+		display: block;
+	}
+}
+.top{
+	text-align: center;
+	background-color: lightseagreen;
+	line-height: 1.6;
+	padding: 20px;
+	width: 100%;
+	color:#fff;
+}
+.main{
+	width: 90%;
+	margin:0 auto;
+	max-width: 800px;
+}
+.main li{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.main li a{
+	display: block;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	-webkit-transition:box-shadow 1s;
+	transition:box-shadow 1s;
+}
+.main li a:hover{
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 20px 0 rgba(0, 0, 0, 0.12);
+}
+.main .left{
+	height: 50px;
+	background-color: #00bcd4;
+	color:#fff;
+	text-align: center;
+	line-height: 50px;
+}
+.main .right{
+	height: 90px;
+	color:#777777;
+	padding-top: 10px;
+	text-align: center;	
+}
+@media (min-width: 764px){
+	.main .left{
+		width: 4rem;
+		float: left;
+		height: 90px;
+		line-height: 90px;
+	}
+	.main .right{
+		float: left;
+		text-align: left;
+		padding-left: 10px;
+	}
+}
+.main .right h2{
+	font-weight: normal;
+	/*标题超出right范围时，显示省略号，防止挤下去。*/
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.main .right p{
+	color:rgba(119,119,119,0.7);
+	margin-top: 10px;
+}
+.footer{
+	padding:30px;
+	line-height: 1.6;
+	text-align: center;
+	color:#fff;
+	font-size:1.4rem;
+	background-color: lightseagreen;
+}
+.skip{
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.3);
+	position: fixed;
+	border-radius: 10px;
+	color:#666;
+	text-align: center;
+	line-height: 50px;
+	font-size: 1.4rem;
+	right: 10%;
+	bottom: 15%
+}
+.jump{
+	width: 60%;
+	margin: 0 auto;
+}
+.jump a{
+	color:#777777;
+	width: 4rem;
+	height: 2rem;
+	display: block;
+	background-color: #333;
+	text-align: center;
+	line-height: 2rem;
+	border-radius: 5px;
+	margin: 10px 0;
+	-webkit-transition:color 0.5s;
+	transition:color 0.5s;
+}
+.jump a:hover{
+	color:#fff;
+}
+.jump .num1{
+	float: left;
+}
+.jump .num2{
+	float:right;
+}
