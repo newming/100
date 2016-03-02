@@ -17,22 +17,38 @@
 		.main p{
 			margin: 10px 0;
 		}
-		ul li{
-			list-style-position: inside;
-		}
-		li p{
-			text-indent: 2rem;
+		.list{
+			padding-left:1rem;
 		}
 	</style>
 </head>
 <body>
-	<div class="top"><h1>前两节的总结</h1>
-		<h3>日期：2016.2.7</h3>
+	<div class="top"><h1>使用jekyll框架</h1>
+		<h3>日期：2016.3.2</h3>
 	</div>
 	<div class="main">
 
-		
+		<p>前一阵子因为各种原因一直没有更新百日百页面，就不跟着以前的时间继续做了，直接跳到了3月份。下面还会接着做的，至少到达100天。</p>
+		<p>
+			在年前我尝试做使用jekyll框架，但是当时失败了几次，一直无法加载layout文件，这几天终于使用成功，下面谈谈其中的注意事项。
+		</p>
+		<p class="list">
+			1.文件结构只能在newming.github.io下，不可以放到一个子文件夹下面。
+		</p>
+		<p class="list">
+			2.读取图片以及css的位置时，应该按照md文件位置为出发点，不可以按照被引用的HTML文件为出发点。
+		</p>
+		<p class="list">
+			3.注意引用是的各种格式的正确书写。
+		</p>
+		<p class="list">
+			4.在一些上下文距离的调节过程中，可以使用换行来操作。
+		</p>
+		<p>
+			下面就是尽情的书写了，有了jekyll，只需用markdown写博客内容了，其他的事情交给git处理。
+		</p>
 	</div>
-	<div class="footer"><h3>Readers are plentiful.Thinkers are rare.<br>阅读的人很多，但思考的人很少。</h3></div>
+	<div class="footer"><h3>This moment will nap,you will have a dream.But this moment study,you will interpret a dream.<br>此刻打盹，你将做梦。而此刻学习，你将圆梦。</h3>
+	</div>
 </body>
 </html>
