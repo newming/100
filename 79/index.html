@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery下拉菜单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		.menu{
+			float: left;
+			position: relative;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+		ul{
+			list-style: none;
+			padding:10px;
+			background-color: #444;
+			color:#fff;
+			position: absolute;
+			top:45px;
+			left: 0;
+		}
+		ul li{
+			white-space:nowrap;  /*禁止文本换行*/
+		}
+		.title{
+			background-color: #444;
+			color: #fff;
+			padding:10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="top"><h1>jQuery下拉菜单</h1>
+		<h3>日期：2016.3.7</h3>
+	</div>
+	<div class="main clearfix">
+		<p>这节要完成老师布置的作业，做一个下拉菜单。</p>
+		<h3>实例：</h3>
+
+		<div class="demo clearfix">
+
+			<div class="menu">
+				<div class="title">服装&nbsp;&nbsp;∨</div>
+				<ul class="list">
+					<li>男鞋</li>
+					<li>男士外套</li>
+					<li>男士裤子</li>
+					<li>内衣</li>
+					<li>T-thirt</li>
+				</ul>
+			</div>
+
+			<div class="menu">
+				<div class="title">手机电脑&nbsp;&nbsp;∨</div>
+				<ul class="list">
+					<li>惠普</li>
+					<li>苹果电脑</li>
+					<li>清华同方</li>
+					<li>戴尔</li>
+					<li>这是一个很长的电脑名</li>
+				</ul>
+			</div>
+
+			<div class="menu">
+				<div class="title">家具建材&nbsp;&nbsp;∨</div>
+				<ul class="list">
+					<li>地板砖</li>
+					<li>石灰</li>
+					<li>各种工具</li>
+				</ul>
+			</div>
+
+			<div class="menu">
+				<div class="title">网游动漫&nbsp;&nbsp;∨</div>
+				<ul class="list">
+					<li>英雄联盟</li>
+					<li>地下城勇士</li>
+					<li>魔兽世界</li>
+					<li>穿越火线</li>
+				</ul>
+			</div>
+
+			<div class="menu">
+				<div class="title">生活用品&nbsp;&nbsp;∨</div>
+				<ul class="list">
+					<li>洗面奶</li>
+					<li>洗脸盆</li>
+					<li>各种自行车</li>
+					<li>还有什么</li>
+					<li>我也不知道了</li>
+				</ul>
+			</div>
+		</div>
+
+		<p>说一下心得，在这个实例中不仅体现了对于jQuery的一些语法应用，还有包括布局时盒子的宽高自动调节。</p>
+	</div>
+	
+	<div class="footer">
+		<h3>Only those who attempt the absurd can achieve the impossible.--Albert Einstein<br>只有那些努力完成荒谬的事才有可能实现不可能。--爱因斯坦</h3>
+	</div>
+
+	<script src="../script/jQuery.js"></script>
+
+	<script>
+		$('.list').hide();
+
+		$('.title').click(function(){
+			// var index = $(this).parent().index()；测试用的获取元素节点
+			// alert(index);
+			$(this).parent().find('.list').slideToggle();   //滑下来
+			$(this).parent().siblings().find('.list').slideUp('fast');  //其他的上去
+		})
+	</script>
+</body>
+</html>
