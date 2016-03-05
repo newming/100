@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js图片切换</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		img{
+			display: block;
+			width: 80%;
+			margin: 10px auto;
+		}
+		pre{
+			background-color: #333;
+			owerflow:auto;
+			padding-left: 1rem;
+			margin-bottom: 10px;
+		}
+		.demo{
+			text-align: center;
+		}
+		ul{
+			list-style: none;
+		}
+		ul li{
+			display: inline-block;
+		}
+		button{
+			width: 3rem;
+			height: 2rem;
+			margin-bottom: 10px;
+			border:none;
+			border-radius: 10px;
+			outline: none;
+		}
+		.color{
+			background-color: deeppink;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>js图片切换</h1>
+		<h3>日期：2016.3.5</h3>
+	</div>
+	<div class="main clearfix">
+		<p>今天是学习js的第一课，主要是结合实例做了一个按钮控制图片切换的效果，下面会列出实际效果。</p>
+		<p>主要是讲了些jQuery方法</p>
+		
+		<h3>实例：</h3>
+
+		<div class="demo">
+			<img src="images/1.jpg" alt="" class="pic">
+			<ul id="list">
+				<li><button class="color but">1</button></li>
+				<li><button class="but">2</button></li>
+				<li><button class="but">3</button></li>
+			</ul>
+		</div>
+
+	</div>
+	
+	<div class="footer"><h3></h3></div>
+
+	<script src="../script/jQuery.js"></script>
+
+	<script>
+		$('.but').click(function(){
+			var index = $(this).parent().index();
+			var indexs = "images/" + (index+1) + ".jpg"
+			$('.pic').attr('src',indexs);
+			// 切换图片
+
+			$(this).addClass('color');
+			$(this).parent().siblings().find('.but').removeClass('color');
+			// 按钮背景色
+		})
+	</script>
+</body>
+</html>
