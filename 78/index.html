@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery动画</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		img{
+			display: block;
+			width: 80%;
+			margin: 10px auto;
+		}
+		.demo{
+			text-align: center;
+		}
+		button{
+			/*width: 3rem;*/
+			/*height: 2rem;*/
+			padding:6px;
+			border:none;
+			border-radius: 10px;
+			outline: none;
+			cursor: pointer;
+		}
+		.box{
+			background-color: deeppink;
+			width: 30vw;
+			height: 30vw;
+			border-radius: 50%;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>jQuery动画</h1>
+		<h3>日期：2016.3.6</h3>
+	</div>
+	<div class="main clearfix">
+		<p>jQuery 有许多动画效果的语法，下面将列举几个，可以参考网站的一些内容<a href="http://www.w3school.com.cn/jquery/jquery_hide_show.asp">这里</a></p>
+		<p>在各种方法的括号内（比如hide（）），可以设置些具体的参数，比如速度，详细的请参照其他网站。</p>
+		<h3>实例：</h3>
+		<div class="demo">
+			<button id="show">show</button>
+			<button id="hide">hide</button>
+			<button id="toggle">toggle</button>
+			<button id="fadeIn">fadeIn</button>
+			<button id="fadeOut">fadeOut</button>
+			<button id="fadeToggle">fadeToggle</button>
+			<button id="fadeTo">fadeTo</button>
+			<button id="slideDown">slidDown</button>
+			<button id="slideUp">slideUp</button>
+			<button id="slideToggle">slideToggle</button>
+			
+			<div class="box"></div>
+		</div>
+
+		<p>这里的切换指的是toggle方法，Peter老师讲的是toggleClass</p>
+		<p>还有一些动画方法，将会在下面的几节中补充。</p>
+	</div>
+	
+	<div class="footer"><h3>Make up your mind to act decidedly and take the consequences.No good is ever done in this world by hesitation.<br>下定决心，果断行动，并承担后果。在这个世界上犹豫不决成就不了任何事。</h3></div>
+
+	<script src="../script/jQuery.js"></script>
+
+	<script>
+		$('#show').click(function(){
+			$('.box').show(1000);
+		})
+		$('#hide').click(function(){
+			$('.box').hide(1000);
+		})
+		$('#toggle').click(function(){
+			$('.box').toggle(1000);
+		})
+		$('#fadeIn').click(function(){
+			$('.box').fadeIn('slow');
+		})
+		$('#fadeOut').click(function(){
+			$('.box').fadeOut('slow');
+		})
+		$('#fadeToggle').click(function(){
+			$('.box').fadeToggle('slow');
+		})
+		$('#fadeTo').click(function(){
+			$('.box').fadeTo('slow',0.5);
+		})
+		$('#slideDown').click(function(){
+			$('.box').slideDown('slow');
+		})
+		$('#slideUp').click(function(){
+			$('.box').slideUp('slow');
+		})
+		$('#slideToggle').click(function(){
+			$('.box').slideToggle('slow');
+		})
+	</script>
+</body>
+</html>
