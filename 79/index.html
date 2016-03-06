@@ -119,12 +119,26 @@
 	<script>
 		$('.list').hide();
 
-		$('.title').click(function(){
+		// $('.title').click(function(){
+		// 	// var index = $(this).parent().index()；测试用的获取元素节点
+		// 	// alert(index);
+		// 	$(this).parent().find('.list').slideToggle();   //滑下来
+		// 	$(this).parent().siblings().find('.list').slideUp('fast');  //其他的上去
+		// })
+		// 方法一：click事件
+
+
+		$('.title').mouseover(function(){
 			// var index = $(this).parent().index()；测试用的获取元素节点
 			// alert(index);
 			$(this).parent().find('.list').slideToggle();   //滑下来
 			$(this).parent().siblings().find('.list').slideUp('fast');  //其他的上去
 		})
+		$('.title').mouseout(function(){
+			$('.list').slideUp('fast');
+		})
+		// 方法二：mouseover事件
+
 	</script>
 </body>
 </html>
