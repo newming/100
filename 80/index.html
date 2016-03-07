@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery animate</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		img{
+			display: block;
+			width: 100%;
+		}
+		.demo{
+			width: 96%;
+			max-width: 246px;
+			overflow: hidden;
+			margin: 10px auto;
+		}
+		.contain{
+			width: 300%;
+		}
+		.box{
+			float: left;
+		}
+		button{
+			width: 3rem;
+			height: 2rem;
+			outline: none;
+			border:none;
+			border-radius: 3px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+		.color{
+			background-color: teal;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>jQuery animate</h1>
+		<h3>日期：2016.3.8</h3>
+	</div>
+	<div class="main clearfix">
+		<p>这节要完成老师布置的作业，做一个图片以动画方式切换的效果。主要用到的animate()和stop()方法，对于其详细介绍可以查看其它文档，比如<a href="http://www.w3school.com.cn/jquery/jquery_animate.asp">W3School</a></p>
+		<h3>实例：</h3>
+
+		<div class="demo">
+			<div class="contain clearfix">
+				<div class="box"><img src="../77/images/1.jpg" alt=""></div>
+				<div class="box"><img src="../77/images/2.jpg" alt=""></div>
+				<div class="box"><img src="../77/images/3.jpg" alt=""></div>
+			</div>
+			<div class="but clearfix">
+				<button class="color">1</button>
+				<button>2</button>
+				<button>3</button>
+			</div>
+		</div>
+
+		<p>在这节内容中尝试用百分数控制图片来保证图片不失真，但是当屏幕很窄时，图片还是会挤下来，唉解决不了了。</p>
+	</div>
+	
+	<div class="footer">
+		<h3>
+			We all have moments of desperation.But if we can face them head on,that's when we find out just how strong we really are.
+		</h3>
+	</div>
+
+	<script src="../script/jQuery.js"></script>
+
+	<script>
+		$('button').mouseenter(function(){
+			var index  = $(this).index();
+			// alert(index);
+			$(this).addClass('color');
+			$(this).siblings().removeClass('color');
+			var  marl = index*-100 + '%';
+			// alert(marl);
+			$('.contain').stop().animate({'margin-left':marl},500);
+		})
+	</script>
+</body>
+</html>

@@ -17,7 +17,11 @@
 		.main p{
 			margin: 10px 0;
 		}
+		.demo{
+			display: inline-block;  /*控制demo大小，防止100%宽度*/
+		}
 		.menu{
+			cursor: pointer;
 			float: left;
 			position: relative;
 			margin-bottom: 10px;
@@ -107,7 +111,15 @@
 			</div>
 		</div>
 
-		<p>说一下心得，在这个实例中不仅体现了对于jQuery的一些语法应用，还有包括布局时盒子的宽高自动调节。</p>
+		<p>说一下心得,首先是布局时盒子的宽高自动调节。</p>
+		<p>然后就是本节的重点了，几个jQuery事件。</p>
+		<p>
+			1.mouseover与mouseout的配合使用，经过子集时会触发。<br>
+			2.mouseenter与mouseleave的配合使用，只会在经过目标时触发。感觉比较好用。
+		</p>
+		<p>
+			还有几个新增的方法，children,next,stop
+		</p>
 	</div>
 	
 	<div class="footer">
@@ -128,16 +140,16 @@
 		// 方法一：click事件
 
 
-		$('.title').mouseover(function(){
+		$('.title').mouseenter(function(){
 			// var index = $(this).parent().index()；测试用的获取元素节点
 			// alert(index);
-			$(this).parent().find('.list').slideToggle();   //滑下来
-			$(this).parent().siblings().find('.list').slideUp('fast');  //其他的上去
+			$(this).next('.list').stop().slideDown();   //滑下来
+			$(this).parent().siblings().find('.list').stop().slideUp('fast');  //其他的上去
 		})
-		$('.title').mouseout(function(){
+		$('.demo').mouseleave(function(){
 			$('.list').slideUp('fast');
 		})
-		// 方法二：mouseover事件
+		// 方法二：mouseenter事件
 
 	</script>
 </body>
