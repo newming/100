@@ -81,13 +81,13 @@
 
 	<script>
 		$('button').mouseenter(function(){
-			var index  = $(this).index();
+			var index  = $(this).index();			//赋值给单击的button
 			// alert(index);
-			$(this).addClass('color');
-			$(this).siblings().removeClass('color');
-			var  marl = index*-100 + '%';
+			$(this).addClass('color');				//添加class，增加button背景色
+			$(this).siblings().removeClass('color');			//其他的移除class
+			var  marl = index*-100 + '%';						//赋值，margin-left的数值
 			// alert(marl);
-			$('.contain').stop().animate({'margin-left':marl},500);
+			$('.contain').stop().animate({'margin-left':marl},500);			//animate动画
 		})
 	</script>
 </body>

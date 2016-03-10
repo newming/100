@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大图随鼠标移动</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		body{
+			overflow: hidden;
+		}
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		img{
+			display: block;
+		}
+		.demo{
+			text-align: center;
+		}
+		ul{
+			list-style: none;
+		}
+		ul li{
+			display: inline-block;
+			margin: 10px;
+		}
+		ul li img{
+			width: 123px;
+		}
+		#bigpic{
+			position: absolute;
+			z-index: 1;
+			display: none;  		/*这句影响动画效果*/
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>大图随鼠标移动</h1>
+		<h3>日期：2016.3.10</h3>
+	</div>
+	<div class="main clearfix">
+
+		<div class="demo">
+			<ul>
+				<li><a href="../77/images/1.jpg"><img src="../77/images/1.jpg" alt="LOL"></a></li>
+				<li><a href="../77/images/2.jpg"><img src="../77/images/2.jpg" alt="LOL"></a></li>
+				<li><a href="../77/images/3.jpg"><img src="../77/images/3.jpg" alt="LOL"></a></li>
+			</ul>
+		</div>
+		<p id="X">请将鼠标移动到图片上</p>
+		<p id="Y">请将鼠标移动到图片上</p>
+
+		<p>注意在css中为大图的div设置了display:none;如果不设置的话，没有出现的动画效果。</p>
+		<p>还有就是对于ul，li的居中设置，比较讨厌啊。ul的宽度始终是占满整行，无法使用margin:0 auto;只能为ul设置固定宽度。我的方法是给li设置了display:inline-block;在父级中使用text-align:center;</p>
+		<p>body设置了overflow:hidden;当屏幕很窄时防止大图的出现影响布局。</p>
+	</div>
+
+	<div class="footer">
+		<h3>
+			You can learn great things from your mistakes when you aren't busy denying them.<br>当你不再急于否认错误时，你就学到了重要的一课。
+		</h3>
+	</div>
+
+	<script src="../script/jQuery.js"></script>
+
+	<script>
+	$('li a').mouseenter(function() {
+		var bigpic = "<div id='bigpic'><img src='" + this.href + "' /></div>";   
+		//此处设置大图的链接，放在div里
+		// alert(bigpic);
+		$('.demo').append(bigpic);			//添加大图div
+		$('#bigpic').fadeIn('slow');		//div出现
+	}).mousemove(function(event) {
+		$('#bigpic').css({
+			'top': (event.pageY+10) + 'px',			//设置大图div的top，left
+			'left': (event.pageX+20) + 'px'
+		});
+		$('#X').text('X轴坐标为' + (event.pageX+20) + 'px');		//h3对应的内容
+		$('#Y').text('Y轴坐标为' + (event.pageY+10) + 'px');
+	}).mouseleave(function(){	
+			$('#bigpic').remove();			//鼠标移除，去掉div及h3内容
+			$('#X').text('请将鼠标移动到图片上');
+			$('#Y').text('请将鼠标移动到图片上');
+		});
+	</script>
+</body>
+</html>
