@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js求和计算</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+		.main p{
+			margin: 10px 0;
+		}
+		button{
+			width: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"><h1>js求和计算</h1>
+		<h3>日期：2016.3.12</h3>
+	</div>
+	<div class="main">
+		<p>今天讲了js的六种数据类型，分别为字符串、数字、布尔、数组、对象、Null、Undefined，主要区别各种数据的不同及其用法。</p>
+		<p>下面来演示两个小例子，主要是利用js实现字符串转换为数字。</p>
+		<h3>实例一：加法计算器。</h3>
+		<input type="text" id="str1">
+		<input type="text" id="str2">
+		<input type="text" id="str3">
+		<br>
+		<button id="plus">求和</button>
+		<br>
+		<br>
+		<h3>实例二：加减if判断</h3>
+		<input type="text" id="num" value="1">
+		<br>
+		<button id="add">+</button>
+		<button id="cut">-</button>
+
+		<p>在第一个实例中，定义各个变量必须放在click事件内部，因为在初始时两个input的value值为0，所以计算的结果也就是0。在click之后再读取value就可以了。</p>
+	</div>
+
+	<div class="footer">
+		<h3>
+			There are more things between heaven and earth than are dreamt of in your philosophy.<br>在这天地间有许多事情是人类哲学所不能解释的。
+		</h3>
+	</div>
+
+	<script src="../script/jQuery.js"></script>
+	<script>
+		$('#plus').click(function() {
+			var str1 = $('#str1').val();
+			var str2 = $('#str2').val();
+			var num1 = Number(str1);
+			var num2 = Number(str2);
+			var plus = num1 + num2;
+			// alert(plus);
+			$('#str3').val(plus);
+		});
+		// 案例一：加法计算器。
+
+		//案例二：增减。
+		var str = $('#num').val();
+		var num = Number(str);
+		$('#add').click(function() {
+			num = num + 1;
+			$('#num').val(num);
+		});
+		$('#cut').click(function() {
+			num = num - 1;
+			if (num<0) {
+				$('#num').val(0);
+			} else {
+				$('#num').val(num);
+			}
+		});		
+
+	</script>
+</body>
+</html>
