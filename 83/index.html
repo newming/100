@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>缩放</title>
+	<style>
+		section{
+			width: 100%;
+			height: 60vh;
+			background-color: teal;
+			overflow: hidden;
+		}
+	</style>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.panzoom.js"></script>
+</head>
+<body>
+<section>
+	<div class="panzoom">
+		<img src="images/erweima.png" alt="">
+	</div>
+</section>
+	<script>
+		(function() {
+      // var $section = $('section').first();
+      $('.panzoom').panzoom({
+        // $zoomIn: $section.find(".zoom-in"),
+        // $zoomOut: $section.find(".zoom-out"),
+        // $zoomRange: $section.find(".zoom-range"),
+        // $reset: $section.find(".reset")
+      });
+    })();
+	</script>
+</body>
+</html>
