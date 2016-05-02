@@ -2,24 +2,52 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
 	<title>缩放</title>
 	<style>
+		body{
+			margin: 0;
+		}
 		section{
 			width: 100%;
 			height: 60vh;
 			background-color: teal;
-			overflow: hidden;
+		}
+		section img{
+			position: absolute;
+		}
+		button{
+			margin: 10px;
+		}
+		.img-contain{
+			/*display: none;*/
+		}
+		.img-contain img{
+			display: inline-block;
+			width: 20vw;
+			height: 20vw;
+			max-width: 200px;
+			max-height: 200px;
+			cursor: pointer;
 		}
 	</style>
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.panzoom.js"></script>
 </head>
 <body>
-<section>
-	<div class="panzoom">
+	<section>
+		<!-- <div class="panzoom"> -->
+			<!-- <img src="images/hobby1.png" alt="" class="panzoom"> -->
+		<!-- </div> -->
+	</section>
+	<button id="btn">图片列表</button>
+	<div class="img-contain">
 		<img src="images/erweima.png" alt="">
+		<img src="images/hobby1.png" alt="">
+		<img src="images/hobby2.png" alt="">
+		<img src="images/hobby3.png" alt="">
 	</div>
-</section>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.panzoom.js"></script>
+	<script src="js/my.js"></script>
 	<script>
 		(function() {
       // var $section = $('section').first();
