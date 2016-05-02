@@ -22,18 +22,23 @@ $('.img-contain img').click(function() {
 		$('.panzoom').panzoom({
 		});
   })();
+  $(function () {
+        $(".panzoom").draggable({            
+            stack: ".panzoom"
+        });
+    });
 });
 
-$('section').click(function(e) {
-	var img = e.target;
-	console.log(img);
-	if (img.className == 'panzoom') {
-		img.remove();
-		$('section').append(img);
-	}
+// $('section').click(function(e) {
+// 	var img = e.target;
+// 	console.log(img);
+// 	if (img.className == 'panzoom') {
+// 		img.remove();
+// 		$('section').append(img);
+// 	}
 
 
 	// var newUrl = $(this).attr('src');
 	// var newImg = "<img src='" + newUrl +"' class='panzoom'>";
 	// $('section').remove($(this));
-});
+// });

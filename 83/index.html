@@ -47,6 +47,10 @@
 	</div>
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.panzoom.js"></script>
+
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.ui.touch-punch.js"></script>
+
 	<script src="js/my.js"></script>
 	<script>
 		(function() {
@@ -58,6 +62,11 @@
         // $reset: $section.find(".reset")
       });
     })();
+    $(function () {
+        $(".panzoom").draggable({            
+            stack: ".panzoom"
+        });
+    });
 	</script>
 </body>
 </html>
