@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>a</title>
+	<script src="popcorn.js"></script>
+</head>
+<body>
+	<video controls="controls" id="myvideo">
+		<source src="LOL.mp4" type="video/mp4">
+	</video>
+	<script>
+		var pop = Popcorn( "#myvideo" );
+		poster = pop.currentTime( 1 ).capture();
+	</script>
+</body>
+</html>
