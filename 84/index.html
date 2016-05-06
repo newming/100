@@ -12,10 +12,10 @@
 	</video>
 	<script>
 		var $pop = Popcorn( "#myvideo" );
-		// image = document.createElement("image");
-		// image.id = "capture";
-		// image.style.marginLeft = "10px";
-		// poster = pop.currentTime( 10 ).capture();
+		image = document.createElement("image");
+		image.id = "capture";
+		image.style.marginLeft = "10px";
+		poster = pop.currentTime( 10 ).capture();
 		$pop.listen("canplayall", function() {
 
 		// this.media.parentNode.appendChild( image );
@@ -29,7 +29,7 @@
 
 			}).currentTime( 0 ).play();
 
-		}).currentTime( 1 ).play();
+		}).currentTime( 0 ).play();
 
 	});
 	</script>
