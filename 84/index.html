@@ -7,12 +7,23 @@
 	<!-- <script src="popcorn.capture.js"></script> -->
 </head>
 <body>
-	<video controls="controls" id="myVid" preload="load">
+	<video controls="controls" id="myVid" preload="load" autoplay="autoplay">
 		<source src="LOL.mp4" type="video/mp4">
 	</video>
 	<script>
 		var myVid = document.getElementById('myVid');
-		myVid.currentTime=5;
+		// console.log(myVid.currentTime);
+		// myVid.currentTime=5;
+		var i = setInterval(function() {
+		if(myVid.currentTime=10) {
+			// video.readyState > 0
+			// var minutes = parseInt(video.duration / 60, 10);
+			// var seconds = video.duration % 60;
+			// (Put the minutes and seconds in the display)
+			myVid.pause();
+			clearInterval(i);
+			}
+		}, 200);
 	// 	var $pop = Popcorn( "#myvideo" );
 	// 	image = document.createElement("image");
 	// 	image.id = "capture";
