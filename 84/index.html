@@ -3,11 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>a</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<!-- <script src="popcorn.js"></script> -->
 	<!-- <script src="popcorn.capture.js"></script> -->
+	<style>
+		video{
+			width: 80%;
+			display: block;
+			margin: 0 auto;
+			max-width: 600px;
+		}
+	</style>
 </head>
 <body>
-	<video controls="controls" id="myVid" preload="load" autoplay="autoplay">
+	<video controls="controls" id="myVid" preload="load">
 		<source src="LOL.mp4" type="video/mp4">
 	</video>
 	<script>
@@ -15,15 +24,21 @@
 		// console.log(myVid.currentTime);
 		// myVid.currentTime=5;
 		var i = setInterval(function() {
-		if(myVid.currentTime=10) {
+		if(myVid.readyState > 0) {
 			// video.readyState > 0
 			// var minutes = parseInt(video.duration / 60, 10);
 			// var seconds = video.duration % 60;
 			// (Put the minutes and seconds in the display)
-			myVid.pause();
-			clearInterval(i);
+			if (myVid.currentTime<3) {
+				// console.log('play')
+				myVid.play();
+			}else{
+				myVid.pause();
+				clearInterval(i);
+				}
 			}
 		}, 200);
+
 	// 	var $pop = Popcorn( "#myvideo" );
 	// 	image = document.createElement("image");
 	// 	image.id = "capture";
