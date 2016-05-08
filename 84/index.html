@@ -3,35 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>a</title>
-	<script src="popcorn.js"></script>
-	<script src="popcorn.capture.js"></script>
+	<!-- <script src="popcorn.js"></script> -->
+	<!-- <script src="popcorn.capture.js"></script> -->
 </head>
 <body>
-	<video controls="controls" id="myvideo" preload="load">
+	<video controls="controls" id="myVid" preload="load">
 		<source src="LOL.mp4" type="video/mp4">
 	</video>
 	<script>
-		var $pop = Popcorn( "#myvideo" );
-		image = document.createElement("image");
-		image.id = "capture";
-		image.style.marginLeft = "10px";
-		// poster = $pop.currentTime( 10 ).capture();
-		$pop.listen("canplayall", function() {
+		var myVid = document.getElementById('myVid');
+		myVid.currentTime=5;
+	// 	var $pop = Popcorn( "#myvideo" );
+	// 	image = document.createElement("image");
+	// 	image.id = "capture";
+	// 	image.style.marginLeft = "10px";
+	// 	// poster = $pop.currentTime( 10 ).capture();
+	// 	$pop.listen("canplayall", function() {
 
-		// this.media.parentNode.appendChild( image );
+	// 	// this.media.parentNode.appendChild( image );
 
-		this.exec( 1, function() {
+	// 	this.exec( 1, function() {
 
-			this.pause().capture({
+	// 		this.pause().capture({
 
-				// target: "img#capture",
-				// media: true
+	// 			// target: "img#capture",
+	// 			// media: true
 
-			}).currentTime( 0 ).play();
+	// 		}).currentTime( 0 ).play();
 
-		}).currentTime( 0 ).play();
+	// 	}).currentTime( 0 ).play();
 
-	});
+	// });
 	</script>
 </body>
 </html>
