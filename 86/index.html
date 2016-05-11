@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flecbox 初探</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="shortcut icon" href="../25/littlelogo.png">
+	<link rel="stylesheet" href="../style/style.css">
+	<style>
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			color:#808080;
+			line-height: 1.6;
+			max-width: 860px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="top"><h1>jQuery animate</h1>
+		<h3>日期：2016.5.11</h3>
+	</div>
+	<div class="main">
+		参考网站：<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">css-tricks 关于flexbox</a>
+		参考网站：<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">阮一峰日志</a>
+		<p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。</p>
+		<p>现在弹性布局可以很好地解决这些布局问题，而且现在对于 flexbox 的支持已经很好了。</p>
+
+		<h3>Flex 布局是什么？</h3><hr>
+		<p>Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。</p>
+		<p>任何一个容器都可以指定为Flex布局。</p>
+<pre>	
+.box{
+  display: flex;
+}
+</pre>
+		<p>行内元素也可以使用Flex布局。</p>
+<pre>
+.box{
+  display: inline-flex;
+}
+</pre>
+		<p>Webkit内核的浏览器，必须加上-webkit前缀。</p>
+<pre>
+.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</pre>
+		<p>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+		
+		<h3>二.基本概念</h3>
+		<p>采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。</p>
+		<img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="">
+		<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
+		<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+
+		<h3>三.容器的属性</h3>
+		<p>这里就不罗列了，我会到codepen上测试各属性。</p>
+	</div>
+	<div class="footer">
+		<h3>
+			Energy and persistence conquer all things.<br>能量加毅力可以征服一切。--本杰明·富兰克林
+		</h3>
+	</div>
+</body>
+</html>
