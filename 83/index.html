@@ -15,12 +15,13 @@
 		}
 		section img{
 			position: absolute;
+			/*z-index: 0;*/
 		}
 		button{
 			margin: 10px;
 		}
 		.img-contain{
-			/*display: none;*/
+			display: none;
 		}
 		.img-contain img{
 			display: inline-block;
@@ -48,8 +49,8 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.panzoom.js"></script>
 
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/jquery.ui.touch-punch.js"></script>
+<!-- 	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.ui.touch-punch.js"></script> -->
 
 	<script src="js/my.js"></script>
 	<script>
@@ -62,11 +63,11 @@
         // $reset: $section.find(".reset")
       });
     })();
-    $(function () {
-        $(".panzoom").draggable({            
-            stack: ".panzoom"
-        });
-    });
+    // $(function () {
+    //     $(".panzoom").draggable({            
+    //         stack: ".panzoom"
+    //     });
+    // });
 	</script>
 </body>
 </html>
