@@ -41,20 +41,20 @@
 	</section>
 	<button id="btn">图片列表</button>
 	<div class="img-contain">
-		<img src="images/erweima.png" alt="">
-		<img src="images/hobby1.png" alt="">
-		<img src="images/hobby2.png" alt="">
-		<img src="images/hobby3.png" alt="">
+		<img src="./images/game1.jpg" alt="">
+		<img src="./images/game2.jpg" alt="">
+		<img src="./images/game3.jpg" alt="">
+		<img src="./images/game4.jpg" alt="">
 	</div>
-	<p>这个宣告作废暂时</p>
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.panzoom.js"></script>
 
 <!-- 	<script src="js/jquery-ui.js"></script>
 	<script src="js/jquery.ui.touch-punch.js"></script> -->
 
-	<script src="js/my.js"></script>
 	<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+	<script src="jquery.js"></script>
+	<script src="jquery.panzoom.js"></script>
+	<script src="my.js"></script>
+	<script src="touch.js"></script>
 	<script>
 		(function() {
       // var $section = $('section').first();
@@ -70,6 +70,22 @@
     //         stack: ".panzoom"
     //     });
     // });
+    		// rotation
+		// var angle = 0;
+		// touch.on('.panzoom', 'touchstart', function(ev){
+		//     ev.startRotate();
+		//     ev.preventDefault();
+		// });
+
+		// touch.on('.panzoom', 'rotate', function(ev){
+		//     var totalAngle = angle + ev.rotation;
+		//     if(ev.fingerStatus === 'end'){
+		//         angle = angle + ev.rotation;
+		//     }
+		//     console.log('aaa');
+		//     this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
+		//     this.style = 'rotate(' + totalAngle + 'deg)';
+		// });
 	</script>
 </body>
 </html>
