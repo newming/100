@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fuck</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+	<style>
+		#target{
+			width: 50%;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/game1.jpg" alt="" id="target">
+	<p></p>
+	<script src="jquery.js"></script>
+	<script src="touch.js"></script>
+	<script>
+		var angle = 0;
+		var initialScale = 1;
+		var currentScale;
+		var dx, dy;
+		var target = document.getElementById("target");
+		target.style.webkitTransition = 'all ease 0.05s';
+
+		touch.on('#target', 'touchstart', function(ev){
+	    // ev.startRotate();
+	    ev.preventDefault();
+		});
+
+		touch.on('#target', 'rotate pinchend drag dragend', function(ev){
+			// rotate
+	    var totalAngle = angle + ev.rotation;
+	    if(ev.fingerStatus === 'end'){
+	        angle = angle + ev.rotation;
+	    }
+	    this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
+			// scale
+			currentScale = ev.scale - 1;
+			currentScale = initialScale + currentScale;
+			currentScale = currentScale > 2 ? 2 : currentScale;
+			currentScale = currentScale < 1 ? 1 : currentScale;
+			this.style.webkitTransform = 'scale(' + currentScale + ')';
+			console.log("当前缩放比例为:" + currentScale + ".");
+			initialScale = currentScale;
+			// drag
+			// dx = dx || 0;
+			// dy = dy || 0;
+			// console.log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
+			// var offx = dx + ev.x + "px";
+			// var offy = dy + ev.y + "px";
+			// this.style.webkitTransform = "translate3d(" + offx + "," + offy + ",0)";
+		});
+
+
+touch.on('#target', 'drag', function(ev){
+	dx = dx || 0;
+	dy = dy || 0;
+	// log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
+	var offx = dx + ev.x + "px";
+	var offy = dy + ev.y + "px";
+	this.style.webkitTransform = "translate3d(" + offx + "," + offy + ",0)";
+});
+
+touch.on('#target', 'dragend', function(ev){
+	dx += ev.x;
+	dy += ev.y;
+});
+	</script>
+</body>
+</html>

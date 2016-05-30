@@ -19,6 +19,10 @@
 	<script>
 		//rotation
 		var angle = 0;
+		var initialScale = 1;
+		var currentScale;
+		var dx, dy;
+
 		touch.on('#target', 'touchstart', function(ev){
 		    ev.startRotate();
 		    ev.preventDefault();
@@ -39,14 +43,13 @@
 		// 	ev.preventDefault();
 		// });
 
-		var initialScale = 1;
-		var currentScale;
+
 
 		touch.on('#target', 'pinchend', function(ev){
 			currentScale = ev.scale - 1;
 			currentScale = initialScale + currentScale;
-			// currentScale = currentScale > 2 ? 2 : currentScale;
-			// currentScale = currentScale < 1 ? 1 : currentScale;
+			currentScale = currentScale > 2 ? 2 : currentScale;
+			currentScale = currentScale < 1 ? 1 : currentScale;
 			this.style.webkitTransform = 'scale(' + currentScale + ')';
 			console.log("当前缩放比例为:" + currentScale + ".");
 		});
@@ -59,13 +62,12 @@
 		// 	ev.preventDefault();
 		// });
 
-		var target = document.getElementById("target");
-		var dx, dy;
+		// var target = document.getElementById("target");
 
 		touch.on('#target', 'drag', function(ev){
 			dx = dx || 0;
 			dy = dy || 0;
-			log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
+			console.log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
 			var offx = dx + ev.x + "px";
 			var offy = dy + ev.y + "px";
 			this.style.webkitTransform = "translate3d(" + offx + "," + offy + ",0)";

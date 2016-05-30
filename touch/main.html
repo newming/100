@@ -37,6 +37,7 @@
 	<section>
 		<!-- <div class="panzoom"> -->
 			<!-- <img src="images/hobby1.png" alt="" class="panzoom"> -->
+		<img src="./images/game1.jpg" alt="" class="panzoom">
 		<!-- </div> -->
 	</section>
 	<button id="btn">图片列表</button>
@@ -71,21 +72,21 @@
     //     });
     // });
     		// rotation
-		// var angle = 0;
-		// touch.on('.panzoom', 'touchstart', function(ev){
-		//     ev.startRotate();
-		//     ev.preventDefault();
-		// });
+		var angle = 0;
+		touch.on('.panzoom', 'touchstart', function(ev){
+		    ev.startRotate();
+		    ev.preventDefault();
+		});
 
-		// touch.on('.panzoom', 'rotate', function(ev){
-		//     var totalAngle = angle + ev.rotation;
-		//     if(ev.fingerStatus === 'end'){
-		//         angle = angle + ev.rotation;
-		//     }
-		//     console.log('aaa');
-		//     this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
-		//     this.style = 'rotate(' + totalAngle + 'deg)';
-		// });
+		touch.on('.panzoom', 'rotate', function(ev){
+		    var totalAngle = angle + ev.rotation;
+		    if(ev.fingerStatus === 'end'){
+		        angle = angle + ev.rotation;
+		    }
+		    console.log('aaa');
+		    this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
+		    this.style = 'rotate(' + totalAngle + 'deg)';
+		});
 	</script>
 </body>
 </html>
