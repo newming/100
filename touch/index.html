@@ -18,23 +18,23 @@
 	<script src="touch.js"></script>
 	<script>
 		//rotation
-		var angle = 0;
+		// var angle = 0;
 		var initialScale = 1;
 		var currentScale;
 		var dx, dy;
 
 		touch.on('#target', 'touchstart', function(ev){
-		    ev.startRotate();
+		    // ev.startRotate();
 		    ev.preventDefault();
 		});
 
-		touch.on('#target', 'rotate', function(ev){
-		    var totalAngle = angle + ev.rotation;
-		    if(ev.fingerStatus === 'end'){
-		        angle = angle + ev.rotation;
-		    }
-		    this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
-		});
+		// touch.on('#target', 'rotate', function(ev){
+		//     var totalAngle = angle + ev.rotation;
+		//     if(ev.fingerStatus === 'end'){
+		//         angle = angle + ev.rotation;
+		//     }
+		//     this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
+		// });
 		// scale
 		var target = document.getElementById("target");
 		target.style.webkitTransition = 'all ease 0.05s';
