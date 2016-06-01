@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+	<title>缩放</title>
+	<style>
+		body{
+			margin: 0;
+		}
+		section{
+			width: 100%;
+			height: 60vh;
+			background-color: teal;
+		}
+		section img{
+			position: absolute;
+			/*z-index: 0;*/
+		}
+		button{
+			margin: 10px;
+		}
+		.img-contain{
+			display: none;
+		}
+		.img-contain img{
+			display: inline-block;
+			width: 20vw;
+			height: 20vw;
+			max-width: 200px;
+			max-height: 200px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<section id="play">
+		<!-- <div class="panzoom"> -->
+			<!-- <img src="images/hobby1.png" alt="" class="panzoom"> -->
+		<img src="./images/game1.jpg" alt="" class="panzoom">
+		<!-- </div> -->
+	</section>
+	<button id="btn">图片列表</button>
+	<div class="img-contain">
+		<img src="./images/game1.jpg" alt="">
+		<img src="./images/game2.jpg" alt="">
+		<img src="./images/game3.jpg" alt="">
+		<img src="./images/game4.jpg" alt="">
+	</div>
+
+
+	<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+	<!-- <script src="jquery.panzoom.js"></script> -->
+	<script src="jquery.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="jquery.ui.touch-punch.js"></script>
+	<script src="my.js"></script>
+	<script src="touch.js"></script>
+	<script>
+    $(function () {
+        $(".panzoom").draggable({            
+            stack: ".panzoom"
+        });
+    });
+		// var target = document.getElementById("target");
+
+		touch.on('.panzoom', 'touchstart', function(ev){
+			ev.preventDefault();
+		});
+
+		var initialScale = 1;
+		var currentScale;
+
+		touch.on('.panzoom', 'pinchend', function(ev){
+			this.style.webkitTransition = 'all ease 0.05s';
+			currentScale = ev.scale - 1;
+			currentScale = initialScale + currentScale;
+			currentScale = currentScale > 2 ? 2 : currentScale;
+			currentScale = currentScale < 1 ? 1 : currentScale;
+			this.style.webkitTransform = 'scale(' + currentScale + ')';
+			console.log("当前缩放比例为:" + currentScale + ".");
+		});
+
+		touch.on('.panzoom', 'pinchend', function(ev){
+			initialScale = currentScale;
+		});
+	</script>
+</body>
+</html>
