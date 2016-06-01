@@ -50,7 +50,7 @@ $('#play').click(function(event) {
 		}
 	}
 });
-}
+// }
 // $('#play').on('click touchstart', '.panzoom', function(event) {
 // 	event.preventDefault();
 // 	/* Act on the event */
