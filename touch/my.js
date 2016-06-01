@@ -42,8 +42,8 @@ $('.img-contain img').click(function() {
 		this.style.webkitTransition = 'all ease 0.05s';
 		currentScale = ev.scale - 1;
 		currentScale = initialScale + currentScale;
-		currentScale = currentScale > 2 ? 2 : currentScale;
-		currentScale = currentScale < 1 ? 1 : currentScale;
+		// currentScale = currentScale > 2 ? 2 : currentScale;
+		// currentScale = currentScale < 1 ? 1 : currentScale;
 		this.style.webkitTransform = 'scale(' + currentScale + ')';
 		console.log("当前缩放比例为:" + currentScale + ".");
 	});
