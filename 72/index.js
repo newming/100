@@ -35,7 +35,7 @@ window.onload = function() {
 
 
             // 原先为touchstart
-    page1.addEventListener("click", function() {
+    page1.addEventListener("touchstart", function() {
         this.style.display = "none";
         page2.style.display = "block";
 

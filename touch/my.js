@@ -5,10 +5,10 @@ $('#btn').click(function() {
 $('.img-contain img').click(function() {
 	// var zMax = 0;
 	// console.log($('.panzoom').has('img').length);
-	var num = $('#paly').children('img').length;
-	console.log(num);
+	// var num = $('#paly').children('img').length;
+	// console.log(num);
 	var newUrl = $(this).attr('src');
-	var newImg = "<img src='" + newUrl +"' class='panzoom' z-index= '" + num + "'>";
+	var newImg = "<img src='" + newUrl +"' class='panzoom'>";
 
 	// if ($('section').has('img').length == 0) {
 		$('section').append(newImg);
@@ -27,12 +27,12 @@ $('.img-contain img').click(function() {
   })();
 });
 
-$('#paly').click(function(event,zIndex) {
+$('#play').click(function(event) {
 	var x = event.target;
 	if ($(x).hasClass('panzoom')) {
 		var oldIndex = $(x).css('z-index');
 		// console.log('tupian');
-		var num = $('#paly').children('img').length - 1;
+		var num = $('#play').children('img').length - 1;
 		// console.log(num);
 		$(x).css('z-index', num);
 		var otherx = $(x).siblings();
@@ -43,10 +43,16 @@ $('#paly').click(function(event,zIndex) {
 			var y = $(otherIndex).css('z-index');
 			// console.log(otherIndex);
 			// console.log(y);
-			if (y >= oldIndex ) {
+			if (y > oldIndex ) {
 				y--;
 				$(otherIndex).css('z-index', y);
 			}
 		}
 	}
 });
+}
+// $('#play').on('click touchstart', '.panzoom', function(event) {
+// 	event.preventDefault();
+// 	/* Act on the event */
+// 	console.log('aaa')
+// });
