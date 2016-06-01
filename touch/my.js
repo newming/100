@@ -31,9 +31,9 @@ $('.img-contain img').click(function() {
 	  });
   });
   
-	touch.on('.panzoom', 'touchstart', function(ev){
-		ev.preventDefault();
-	});
+	// touch.on('.panzoom', 'touchstart', function(ev){
+	// 	ev.preventDefault();
+	// });
 
 	var initialScale = 1;
 	var currentScale;
