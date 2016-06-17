@@ -21,7 +21,7 @@ video.addEventListener('loadeddata',captureImage);
  
 var captureImage = function() {
 
-	img.crossOrigin = "Anonymous";
+	// img.crossOrigin = "Anonymous";
   var canvas = document.createElement("canvas");
   canvas.width = video.videoWidth * scale;
   canvas.height = video.videoHeight * scale;
